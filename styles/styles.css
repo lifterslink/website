@@ -8,6 +8,7 @@ body {
 header {
     display: flex;
     align-items: center;
+    justify-content: center; /* Center the header content */
     background-color: #333;
     padding: 10px;
 }
@@ -37,17 +38,17 @@ main {
 }
 
 .embed-container {
-    display: inline-block; /* Center the container */
     margin-bottom: 20px;
+    text-align: center;
 }
 
 .embed-container iframe {
-    display: block;
+    display: block; /* Make iframes block elements */
     margin: 0 auto; /* Center iframes */
 }
 
 /* Custom size for the Google Spreadsheet */
 .spreadsheet-embed {
-    width: 3200px;
-    height: 1920px;
+    width: 3200px; /* 5 times the original width (640px * 5) */
+    height: 1920px; /* 4 times the original height (480px * 4) */
 }
