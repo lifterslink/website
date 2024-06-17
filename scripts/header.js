@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const headerHTML = `
         <header>
-            <img src="images/logo.png" alt="Lifters Link Logo" class="logo">
+            <img src="logo.png" alt="Lifters Link Logo" class="logo">
             <nav>
                 <ul>
                     <li><a href="get_notified.html">Get Notified</a></li>
