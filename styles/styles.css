@@ -2,6 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    text-align: center; /* Center-align text and elements */
 }
 
 header {
@@ -36,5 +37,17 @@ main {
 }
 
 .embed-container {
+    display: inline-block; /* Center the container */
     margin-bottom: 20px;
+}
+
+.embed-container iframe {
+    display: block;
+    margin: 0 auto; /* Center iframes */
+}
+
+/* Custom size for the Google Spreadsheet */
+.spreadsheet-embed {
+    width: 3200px;
+    height: 1920px;
 }
