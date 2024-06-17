@@ -8,13 +8,14 @@ body {
 header {
     display: flex;
     align-items: center;
-    justify-content: center; /* Center the header content */
+    justify-content: flex-start; /* Center the header content */
     background-color: #333;
     padding: 10px;
 }
 
 header .logo {
     width: 100px;
+    margin-right: 20px;
 }
 
 nav ul {
