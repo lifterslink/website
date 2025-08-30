@@ -2,6 +2,14 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Git Commit Guidelines
+
+When creating commits:
+- DO NOT add Claude as a co-author
+- DO NOT include "Generated with Claude Code" or similar messages
+- DO NOT add "Co-Authored-By: Claude" lines
+- Keep commit messages clean and professional without AI attribution
+
 ## Project Overview
 
 This is a static website for Lifters Link (lifterslink.com), a platform for the global powerlifting community. The site is built with vanilla HTML, CSS, and minimal JavaScript.
