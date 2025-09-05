@@ -163,9 +163,7 @@ backdrop-filter: blur(20px)
   - 3.6M+ competition results
 
 ### Supabase Database
-- **Import Scripts**: `/Users/zhast/Documents/lifters-link/Data/Supabase/`
-  - `import_openpowerlifting_v2.py` - Main import script
-  - `import_openpowerlifting.py` - Original import script
+- **Import Script**: `/Users/zhast/Documents/lifters-link/Data/Supabase/import_openpowerlifting_v2.py`
 - **Database URL**: `https://vfycxzcpgsagcssshsyz.supabase.co`
 - **Current Data**: Only ~2,500 athletes imported (test subset)
 - **Tables**: athletes, meets, competition_results
