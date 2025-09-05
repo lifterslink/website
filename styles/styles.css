@@ -93,6 +93,25 @@ body::before {
     align-items: center;
 }
 
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo-wrapper:hover {
+    transform: scale(1.05);
+}
+
+.logo-image {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    filter: drop-shadow(0 2px 8px rgba(214, 104, 83, 0.3));
+    animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .logo {
     font-family: 'Rubik', sans-serif;
     font-size: 24px;
@@ -103,11 +122,6 @@ body::before {
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover {
-    transform: scale(1.05);
 }
 
 .follow-us {
@@ -599,6 +613,24 @@ footer::before {
     gap: 30px;
 }
 
+.footer-logo {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.footer-logo-image {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 12px rgba(214, 104, 83, 0.2));
+    transition: transform 0.3s ease;
+}
+
+.footer-logo-image:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
 .footer-nav {
     display: flex;
     gap: 40px;
@@ -650,8 +682,22 @@ footer::before {
         gap: 15px;
     }
     
+    .logo-wrapper {
+        gap: 10px;
+    }
+    
+    .logo-image {
+        width: 35px;
+        height: 35px;
+    }
+    
     .logo {
         font-size: 20px;
+    }
+    
+    .footer-logo-image {
+        width: 50px;
+        height: 50px;
     }
     
     .hero {
