@@ -1,0 +1,154 @@
+# Lifters Link Website
+
+The official marketing website for Lifters Link - a comprehensive platform for the global powerlifting community.
+
+🌐 **Live Site**: [lifterslink.com](https://lifterslink.com)
+
+## 🎯 About Lifters Link
+
+Lifters Link is building infrastructure as strong as the sport itself. We're creating a platform where athletes, coaches, and meet directors can:
+- Connect with the global powerlifting community
+- Register and organize competitions
+- Track and showcase performance history
+- Spectate and follow athletes' journeys
+
+## 🎨 Design Philosophy
+
+This website features a modern, premium design that matches our mobile app aesthetic:
+
+- **Dark Theme**: Deep navy (#11151c) background with sophisticated layering
+- **Coral Accent**: Vibrant coral (#d66853) for CTAs and interactive elements
+- **Glassmorphism**: Frosted glass effects throughout for depth and elegance
+- **Micro-interactions**: Smooth animations and hover effects for engagement
+- **Responsive**: Mobile-first design that looks great on all devices
+
+## 🚀 Features
+
+### Interactive Waitlist
+- Click-to-reveal email collection form
+- Smooth animations and transitions
+- Real-time validation and feedback
+- Serverless backend ready for integration
+
+### Modern UI/UX
+- Glassmorphic cards with backdrop blur
+- Floating gradient backgrounds
+- Shimmer effects and hover animations
+- Accessible design with ARIA labels
+- Keyboard navigation support
+
+### Performance Optimized
+- Lazy loading for images
+- Efficient CSS animations
+- Minimal JavaScript footprint
+- SEO optimized with meta tags
+
+## 🛠 Tech Stack
+
+- **Frontend**: Vanilla HTML, CSS, JavaScript
+- **Styling**: Custom CSS with CSS Variables
+- **Fonts**: Rubik & Inter (Google Fonts)
+- **Hosting**: Vercel
+- **API**: Vercel Serverless Functions
+- **Domain**: Custom domain via Vercel
+
+## 📁 Project Structure
+
+```
+website/
+├── index.html           # Main landing page
+├── styles/
+│   └── styles.css      # All styling and animations
+├── images/
+│   └── LifterInAction.png
+├── api/
+│   ├── waitlist.js     # Serverless email collection
+│   └── README.md       # API integration guide
+├── lifters_link.png    # Logo and favicon
+└── CLAUDE.md           # Development context for AI assistance
+```
+
+## 🔧 Development
+
+### Prerequisites
+- Node.js (for Vercel CLI)
+- Git
+
+### Local Development
+```bash
+# Clone the repository
+git clone https://github.com/lifterslink/website.git
+cd website
+
+# Install Vercel CLI (if not installed)
+npm i -g vercel
+
+# Run local development server with API support
+vercel dev
+
+# Or for simple preview without API
+python -m http.server 8000
+# or
+npx serve
+```
+
+### Deployment
+```bash
+# Deploy to preview
+vercel
+
+# Deploy to production
+vercel --prod
+```
+
+## 📊 Waitlist Integration
+
+The waitlist form is ready for backend integration. Current options:
+
+1. **Supabase** (Recommended)
+2. **Airtable**
+3. **Google Sheets API**
+4. **Email Services** (ConvertKit, Mailchimp)
+
+See [`api/README.md`](api/README.md) for detailed integration instructions.
+
+## 🎨 Design System
+
+### Colors
+- Background: `#11151c`
+- Surface: `#212d40`
+- Accent: `#d66853`
+- Text Primary: `#ffffff`
+- Text Secondary: `#a8b2c7`
+
+### Typography
+- Headers: Rubik (700-800 weight)
+- Body: Inter (400-500 weight)
+
+### Key Components
+- Glass cards with blur backdrop
+- Gradient buttons with hover effects
+- Floating animation backgrounds
+- Shimmer loading effects
+
+## 📱 Browser Support
+
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
+- Mobile browsers (iOS Safari, Chrome Mobile)
+
+## 🤝 Connect
+
+- **Instagram**: [@lifterslink](https://www.instagram.com/lifterslink/)
+- **LinkedIn**: [Lifters Link](https://www.linkedin.com/company/lifterslink/)
+- **Website**: [lifterslink.com](https://lifterslink.com)
+
+## 📄 License
+
+© 2024 Lifters Link. All rights reserved.
+
+---
+
+*Building infrastructure as strong as the sport.*

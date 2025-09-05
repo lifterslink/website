@@ -12,35 +12,138 @@ When creating commits:
 
 ## Project Overview
 
-This is a static website for Lifters Link (lifterslink.com), a platform for the global powerlifting community. The site is built with vanilla HTML, CSS, and minimal JavaScript.
+Lifters Link (lifterslink.com) is a comprehensive platform for the global powerlifting community. This is the marketing website built with modern web standards and deployed on Vercel.
+
+## Current Design System
+
+### Color Palette (Matching App Theme)
+```css
+--bg-primary: #11151c (Very dark navy/black)
+--surface: #212d40 (Dark blue-gray for cards)
+--surface-light: rgba(33, 45, 64, 0.6) (Glassmorphism)
+--accent: #d66853 (Coral/salmon - primary accent)
+--accent-secondary: #7d4e57 (Muted rose/mauve)
+--text-primary: #ffffff
+--text-secondary: #a8b2c7
+--text-muted: #6b7585
+```
+
+### Typography
+- **Primary Font**: Rubik (rounded, modern feel matching app)
+- **Secondary Font**: Inter (clean, readable for body text)
+- Font stack: `'Rubik', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif`
+
+### Design Principles
+1. **Glassmorphism**: Frosted glass effects with backdrop-filter blur
+2. **Smooth Animations**: Cubic-bezier easing for premium feel
+3. **Micro-interactions**: Hover effects, shimmer animations, floating backgrounds
+4. **Dark Premium Aesthetic**: Matching the app's sophisticated look
+5. **Coral Accent Usage**: CTAs, links, and important interactive elements
 
 ## Project Structure
 
-- `index.html` - Main landing page with sections for hero, infrastructure, team, and footer
-- `styles/styles.css` - All styling using Google Fonts (Inter and Syne)
-- `scripts/header.js` - Small JavaScript file for header insertion (currently unused in index.html)
-- `images/` - Team member photos and action images
-- `logo.png` - Company logo
-- `CNAME` - GitHub Pages custom domain configuration (lifterslink.com)
+- `index.html` - Main landing page with hero, waitlist form, content sections
+- `styles/styles.css` - Complete styling with glassmorphism and animations
+- `api/waitlist.js` - Vercel serverless function for email collection
+- `lifters_link.png` - App logo/icon used in header and as favicon
+- `images/` - Image assets including LifterInAction.png
+
+## Key Features
+
+### Waitlist System
+- **Interactive Form**: Button reveals email input with smooth animation
+- **Native Collection**: Emails collected via Vercel API (not Google Forms)
+- **Serverless Backend**: `/api/waitlist` endpoint ready for database integration
+- **Success States**: Visual feedback with animations
+
+### Responsive Design
+- Mobile-first approach with proper breakpoints
+- Touch-friendly targets (44px minimum)
+- Flexible grid layouts
+- Optimized font sizes with clamp()
+
+### Accessibility Features
+- ARIA labels on all major sections
+- Focus-visible styles for keyboard navigation
+- Semantic HTML structure with main, section, nav tags
+- Descriptive alt text for images
+- Proper heading hierarchy
+
+### Performance Optimizations
+- Lazy loading on images
+- Efficient CSS animations using transform/opacity
+- Minimal JavaScript footprint
+- Optimized font loading
 
 ## Development Commands
 
-Since this is a static website with no build process:
-- Open `index.html` directly in a browser to preview changes
-- Use a local web server for development: `python -m http.server 8000` or `npx serve`
-- No build, lint, or test commands required
+Since this is deployed on Vercel:
+- `vercel dev` - Run locally with serverless functions
+- `vercel` - Deploy to preview
+- `vercel --prod` - Deploy to production
 
-## Architecture Notes
+For simple preview:
+- `python -m http.server 8000` or `npx serve`
 
-- Pure static site - no framework or build tools
-- Hosted on GitHub Pages with custom domain
-- CSS uses custom properties for consistent theming with dark mode design
-- Responsive design using flexbox layouts
-- External font dependencies from Google Fonts (Inter and Syne families)
+## API Integration Notes
 
-## Key Design Patterns
+The waitlist API (`/api/waitlist.js`) is configured but needs backend storage:
+- Currently logs to console
+- Ready for integration with:
+  - Supabase (recommended)
+  - Airtable
+  - Google Sheets
+  - Email services (ConvertKit, Mailchimp)
 
-- All styles centralized in `styles/styles.css`
-- Color scheme: Dark theme (#121212 background) with purple/blue accents (#8b98ea, #2f4a80)
-- Typography: Syne for headers, Inter for body text
-- Team section uses radial gradient backgrounds for visual depth
+See `api/README.md` for integration instructions.
+
+## Recent Major Updates
+
+1. **Complete Redesign** (Latest)
+   - Implemented app-matching color scheme with coral accent
+   - Added glassmorphism throughout site
+   - Created reveal-style waitlist form
+   - Enhanced with micro-interactions and animations
+
+2. **Waitlist Integration**
+   - Replaced Google Forms with native email collection
+   - Added Vercel serverless function
+   - Implemented loading states and error handling
+
+3. **Logo Integration**
+   - Added Lifters Link logo to navigation
+   - Configured as favicon
+   - Rounded corners for app icon consistency
+
+4. **Best Practices Refactor**
+   - Added comprehensive accessibility features
+   - Implemented SEO meta tags and structured data
+   - Added performance optimizations
+   - Improved error handling and fallbacks
+
+## Design Tokens Reference
+
+```css
+/* Shadows */
+box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3)
+box-shadow: 0 4px 15px var(--glow-accent)
+
+/* Borders */
+border: 1px solid var(--border-subtle)
+border-radius: 24px (cards)
+border-radius: 50px (buttons)
+
+/* Animations */
+transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1)
+animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1)
+
+/* Glassmorphism */
+background: var(--surface-light)
+backdrop-filter: blur(20px)
+-webkit-backdrop-filter: blur(20px)
+```
+
+## Important URLs
+- Production: https://lifterslink.com
+- Instagram: https://www.instagram.com/lifterslink/
+- LinkedIn: https://www.linkedin.com/company/lifterslink/
