@@ -53,10 +53,7 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              Email: email,
-              'Signup Date': new Date().toISOString(),
-              Source: 'Website',
-              Status: 'Pending'
+              Email: email
             }
           }
         ]
@@ -75,7 +72,7 @@ export default async function handler(req, res) {
           console.error('Airtable Setup Error: Table not found or permissions issue');
           console.error('Please ensure:');
           console.error('1. You have created a table named "Waitlist" in your Airtable base');
-          console.error('2. The table has these fields: Email, Signup Date, Source, Status');
+          console.error('2. The table has a field named "Email" (type: Email)');
           console.error('3. Your API token has write permissions');
           
           // Still save the email somewhere (you could log it or send to a backup service)
