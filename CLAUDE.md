@@ -147,3 +147,30 @@ backdrop-filter: blur(20px)
 - Production: https://lifterslink.com
 - Instagram: https://www.instagram.com/lifterslink/
 - LinkedIn: https://www.linkedin.com/company/lifterslink/
+
+## Database & Data Sources
+
+### OpenPowerlifting Data
+- **Location**: `/Users/zhast/Documents/lifters-link/Data/OpenPowerlifting/`
+- **Main CSV**: `openpowerlifting-2025-08-30/openpowerlifting-2025-08-30-f5ba05c7.csv` (705MB)
+- **2024 Statistics** (displayed on website):
+  - 140,611 unique athletes competed
+  - 3,937 meets held
+  - 228 federations active
+  - 279,864 competition results
+- **All-time Statistics**:
+  - 931,489 unique athletes
+  - 3.6M+ competition results
+
+### Supabase Database
+- **Import Scripts**: `/Users/zhast/Documents/lifters-link/Data/Supabase/`
+  - `import_openpowerlifting_v2.py` - Main import script
+  - `import_openpowerlifting.py` - Original import script
+- **Database URL**: `https://vfycxzcpgsagcssshsyz.supabase.co`
+- **Current Data**: Only ~2,500 athletes imported (test subset)
+- **Tables**: athletes, meets, competition_results
+
+### Airtable (Waitlist)
+- **Base ID**: `appdlFtFZ1Th6ALxh`
+- **Table**: `Waitlist` (single field: Email)
+- **API Key**: Stored in `.env.local`
