@@ -136,12 +136,14 @@ body::before {
     backdrop-filter: blur(10px);
     border: 1px solid var(--border-subtle);
     transition: all 0.3s ease;
+    text-decoration: none;
 }
 
 .follow-us:hover {
     background: rgba(214, 104, 83, 0.1);
     border-color: var(--accent);
     color: var(--accent);
+    transform: translateY(-2px);
 }
 
 /* Hero Section */
