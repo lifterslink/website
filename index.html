@@ -179,6 +179,15 @@
                 console.error('Waitlist form elements not found');
                 return;
             }
+            
+            // Check if user already joined waitlist
+            const hasJoined = localStorage.getItem('lifterslink_waitlist_joined');
+            if (hasJoined) {
+                triggerButton.textContent = '✓ On the Waitlist';
+                triggerButton.disabled = true;
+                triggerButton.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+                return; // Exit early - don't set up any event listeners
+            }
         
         // Show form when button is clicked
         triggerButton.addEventListener('click', () => {
@@ -217,11 +226,19 @@
                     messageDiv.textContent = '✓ You\'re on the list!';
                     emailInput.value = '';
                     
-                    // Reset after 3 seconds
+                    // Save to localStorage to prevent resubmission
+                    localStorage.setItem('lifterslink_waitlist_joined', 'true');
+                    localStorage.setItem('lifterslink_waitlist_email', email);
+                    localStorage.setItem('lifterslink_waitlist_date', new Date().toISOString());
+                    
+                    // Update button permanently
                     setTimeout(() => {
                         waitlistForm.classList.remove('reveal', 'success');
                         waitlistForm.classList.add('hidden');
                         triggerButton.classList.remove('hidden');
+                        triggerButton.textContent = '✓ On the Waitlist';
+                        triggerButton.disabled = true;
+                        triggerButton.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
                         messageDiv.className = 'form-message';
                         messageDiv.textContent = '';
                         submitButton.disabled = false;
@@ -260,6 +277,14 @@
                 triggerButton.classList.remove('hidden');
                 messageDiv.className = 'form-message';
                 messageDiv.textContent = '';
+                
+                // Check if they've already joined
+                const hasJoined = localStorage.getItem('lifterslink_waitlist_joined');
+                if (hasJoined) {
+                    triggerButton.textContent = '✓ On the Waitlist';
+                    triggerButton.disabled = true;
+                    triggerButton.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+                }
             }
         });
         }
