@@ -108,6 +108,7 @@ body::before {
     width: 40px;
     height: 40px;
     object-fit: contain;
+    border-radius: 10px;
     filter: drop-shadow(0 2px 8px rgba(214, 104, 83, 0.3));
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -615,24 +616,6 @@ footer::before {
     gap: 30px;
 }
 
-.footer-logo {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-}
-
-.footer-logo-image {
-    width: 60px;
-    height: 60px;
-    object-fit: contain;
-    filter: drop-shadow(0 4px 12px rgba(214, 104, 83, 0.2));
-    transition: transform 0.3s ease;
-}
-
-.footer-logo-image:hover {
-    transform: scale(1.1) rotate(5deg);
-}
-
 .footer-nav {
     display: flex;
     gap: 40px;
@@ -695,11 +678,6 @@ footer::before {
     
     .logo {
         font-size: 20px;
-    }
-    
-    .footer-logo-image {
-        width: 50px;
-        height: 50px;
     }
     
     .hero {
