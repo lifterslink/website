@@ -70,7 +70,11 @@
         <div class="container">
             <h2>WE'RE COMING TO THE POWERLIFTING ECOSYSTEM.</h2>
             <p class="subheading">A platform made for and by powerlifters.</p>
-            <a href="https://forms.gle/hVY7oxVqHz6xyV7n8" class="cta-button" target="_blank">Join the Waitlist</a>
+            <form id="waitlist-form" class="waitlist-form">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="submit" class="cta-button">Join the Waitlist</button>
+            </form>
+            <div id="form-message" class="form-message"></div>
         </div>
     </section>
 
@@ -115,5 +119,57 @@
         </div>
     </footer>
 
+    <script>
+        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const form = e.target;
+            const email = form.email.value;
+            const button = form.querySelector('button');
+            const messageDiv = document.getElementById('form-message');
+            
+            // Disable button and show loading state
+            button.disabled = true;
+            button.textContent = 'Joining...';
+            
+            try {
+                const response = await fetch('/api/waitlist', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ email }),
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    // Success
+                    messageDiv.className = 'form-message success';
+                    messageDiv.textContent = 'Success! You\'re on the waitlist.';
+                    form.reset();
+                    button.textContent = 'Joined!';
+                    
+                    // Reset button after 3 seconds
+                    setTimeout(() => {
+                        button.disabled = false;
+                        button.textContent = 'Join the Waitlist';
+                        messageDiv.textContent = '';
+                    }, 3000);
+                } else {
+                    // Error
+                    messageDiv.className = 'form-message error';
+                    messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
+                    button.disabled = false;
+                    button.textContent = 'Join the Waitlist';
+                }
+            } catch (error) {
+                messageDiv.className = 'form-message error';
+                messageDiv.textContent = 'Network error. Please try again.';
+                button.disabled = false;
+                button.textContent = 'Join the Waitlist';
+            }
+        });
+    </script>
 </body>
 </html>

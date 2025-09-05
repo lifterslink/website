@@ -172,6 +172,95 @@ body {
     box-shadow: 0 6px 25px rgba(214, 104, 83, 0.4);
 }
 
+.cta-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+}
+
+.waitlist-form {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    justify-content: center;
+    align-items: center;
+    max-width: 500px;
+    margin: 0 auto;
+    animation: fadeInUp 0.8s ease-out 0.4s backwards;
+}
+
+.waitlist-form input[type="email"] {
+    flex: 1;
+    padding: 16px 24px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    background: rgba(33, 45, 64, 0.5);
+    backdrop-filter: blur(10px);
+    color: var(--text-primary);
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.waitlist-form input[type="email"]::placeholder {
+    color: var(--text-muted);
+}
+
+.waitlist-form input[type="email"]:focus {
+    border-color: var(--accent);
+    background: rgba(33, 45, 64, 0.7);
+    box-shadow: 0 0 0 3px rgba(214, 104, 83, 0.1);
+}
+
+.waitlist-form input[type="email"]:invalid:not(:placeholder-shown) {
+    border-color: var(--error);
+}
+
+.waitlist-form .cta-button {
+    flex-shrink: 0;
+    margin: 0;
+    border: none;
+    cursor: pointer;
+}
+
+.form-message {
+    margin-top: 20px;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    animation: fadeIn 0.3s ease;
+    display: none;
+}
+
+.form-message:not(:empty) {
+    display: block;
+}
+
+.form-message.success {
+    background: rgba(76, 175, 80, 0.1);
+    color: var(--success);
+    border: 1px solid rgba(76, 175, 80, 0.2);
+}
+
+.form-message.error {
+    background: rgba(244, 67, 54, 0.1);
+    color: var(--error);
+    border: 1px solid rgba(244, 67, 54, 0.2);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .infrastructure {
     padding: 80px 0;
     position: relative;
@@ -337,7 +426,19 @@ footer {
         gap: 40px;
     }
     
-    .cta-button {
+    .waitlist-form {
+        flex-direction: column;
+        gap: 12px;
+        max-width: 100%;
+        padding: 0 20px;
+    }
+    
+    .waitlist-form input[type="email"] {
+        width: 100%;
+    }
+    
+    .waitlist-form .cta-button {
+        width: 100%;
         padding: 14px 32px;
         font-size: 14px;
     }
