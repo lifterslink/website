@@ -93,17 +93,17 @@
                 <div class="hero-divider"></div>
                 <div class="hero-stats">
                     <div class="stat">
-                        <span class="stat-number">140K+</span>
+                        <span class="stat-number" data-target="140000" data-suffix="K+">0</span>
                         <span class="stat-label">Athletes</span>
                     </div>
                     <div class="stat-separator"></div>
                     <div class="stat">
-                        <span class="stat-number">3.9K+</span>
+                        <span class="stat-number" data-target="3900" data-suffix="+">0</span>
                         <span class="stat-label">Meets</span>
                     </div>
                     <div class="stat-separator"></div>
                     <div class="stat">
-                        <span class="stat-number">228</span>
+                        <span class="stat-number" data-target="228" data-suffix="">0</span>
                         <span class="stat-label">Federations</span>
                     </div>
                 </div>
@@ -293,6 +293,63 @@
             }
         });
         }
+    </script>
+    
+    <script>
+        // Number counter animation
+        function animateNumbers() {
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 2000; // Animation duration in milliseconds
+            
+            counters.forEach(counter => {
+                const target = parseInt(counter.getAttribute('data-target'));
+                const suffix = counter.getAttribute('data-suffix') || '';
+                const increment = target / (speed / 16); // 60fps
+                let current = 0;
+                
+                const updateCounter = () => {
+                    current += increment;
+                    
+                    if (current < target) {
+                        if (suffix === 'K+') {
+                            counter.textContent = Math.floor(current / 1000) + suffix;
+                        } else {
+                            counter.textContent = Math.floor(current).toLocaleString() + suffix;
+                        }
+                        requestAnimationFrame(updateCounter);
+                    } else {
+                        // Final value
+                        if (suffix === 'K+') {
+                            counter.textContent = (target / 1000) + suffix;
+                        } else {
+                            counter.textContent = target.toLocaleString() + suffix;
+                        }
+                    }
+                };
+                
+                updateCounter();
+            });
+        }
+        
+        // Intersection Observer to trigger animation when stats come into view
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting && !entry.target.classList.contains('animated')) {
+                    entry.target.classList.add('animated');
+                    animateNumbers();
+                }
+            });
+        }, {
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        });
+        
+        // Start observing when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            const statsSection = document.querySelector('.hero-stats');
+            if (statsSection) {
+                observer.observe(statsSection);
+            }
+        });
     </script>
 </body>
 </html>
