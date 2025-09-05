@@ -70,11 +70,20 @@
         <div class="container">
             <h2>WE'RE COMING TO THE POWERLIFTING ECOSYSTEM.</h2>
             <p class="subheading">A platform made for and by powerlifters.</p>
-            <form id="waitlist-form" class="waitlist-form">
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                <button type="submit" class="cta-button">Join the Waitlist</button>
-            </form>
-            <div id="form-message" class="form-message"></div>
+            <div class="waitlist-container">
+                <button id="waitlist-trigger" class="cta-button">Join the Waitlist</button>
+                <form id="waitlist-form" class="waitlist-form hidden">
+                    <div class="form-group">
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <button type="submit" class="submit-button">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="9 18 15 12 9 6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </form>
+                <div id="form-message" class="form-message"></div>
+            </div>
         </div>
     </section>
 
@@ -120,17 +129,29 @@
     </footer>
 
     <script>
-        document.getElementById('waitlist-form').addEventListener('submit', async (e) => {
+        const triggerButton = document.getElementById('waitlist-trigger');
+        const waitlistForm = document.getElementById('waitlist-form');
+        const emailInput = document.getElementById('email');
+        const messageDiv = document.getElementById('form-message');
+        
+        // Show form when button is clicked
+        triggerButton.addEventListener('click', () => {
+            triggerButton.classList.add('hidden');
+            waitlistForm.classList.remove('hidden');
+            waitlistForm.classList.add('reveal');
+            emailInput.focus();
+        });
+        
+        // Handle form submission
+        waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const form = e.target;
-            const email = form.email.value;
-            const button = form.querySelector('button');
-            const messageDiv = document.getElementById('form-message');
+            const email = emailInput.value;
+            const submitButton = waitlistForm.querySelector('.submit-button');
             
-            // Disable button and show loading state
-            button.disabled = true;
-            button.textContent = 'Joining...';
+            // Show loading state
+            submitButton.disabled = true;
+            submitButton.classList.add('loading');
             
             try {
                 const response = await fetch('/api/waitlist', {
@@ -145,29 +166,54 @@
                 
                 if (response.ok) {
                     // Success
-                    messageDiv.className = 'form-message success';
-                    messageDiv.textContent = 'Success! You\'re on the waitlist.';
-                    form.reset();
-                    button.textContent = 'Joined!';
+                    waitlistForm.classList.add('success');
+                    messageDiv.className = 'form-message success show';
+                    messageDiv.textContent = '✓ You\'re on the list!';
+                    emailInput.value = '';
                     
-                    // Reset button after 3 seconds
+                    // Reset after 3 seconds
                     setTimeout(() => {
-                        button.disabled = false;
-                        button.textContent = 'Join the Waitlist';
+                        waitlistForm.classList.remove('reveal', 'success');
+                        waitlistForm.classList.add('hidden');
+                        triggerButton.classList.remove('hidden');
+                        messageDiv.className = 'form-message';
                         messageDiv.textContent = '';
+                        submitButton.disabled = false;
+                        submitButton.classList.remove('loading');
                     }, 3000);
                 } else {
                     // Error
-                    messageDiv.className = 'form-message error';
+                    messageDiv.className = 'form-message error show';
                     messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
-                    button.disabled = false;
-                    button.textContent = 'Join the Waitlist';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('loading');
+                    
+                    setTimeout(() => {
+                        messageDiv.className = 'form-message';
+                        messageDiv.textContent = '';
+                    }, 3000);
                 }
             } catch (error) {
-                messageDiv.className = 'form-message error';
+                messageDiv.className = 'form-message error show';
                 messageDiv.textContent = 'Network error. Please try again.';
-                button.disabled = false;
-                button.textContent = 'Join the Waitlist';
+                submitButton.disabled = false;
+                submitButton.classList.remove('loading');
+                
+                setTimeout(() => {
+                    messageDiv.className = 'form-message';
+                    messageDiv.textContent = '';
+                }, 3000);
+            }
+        });
+        
+        // Click outside to close
+        document.addEventListener('click', (e) => {
+            if (!waitlistForm.contains(e.target) && !triggerButton.contains(e.target) && !waitlistForm.classList.contains('hidden')) {
+                waitlistForm.classList.remove('reveal');
+                waitlistForm.classList.add('hidden');
+                triggerButton.classList.remove('hidden');
+                messageDiv.className = 'form-message';
+                messageDiv.textContent = '';
             }
         });
     </script>
