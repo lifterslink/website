@@ -36,7 +36,13 @@ body {
 .nav {
     background-color: #121212;
     padding: 20px 0;
-    text-align: center;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .logo {
@@ -45,6 +51,8 @@ body {
     font-weight: 800;
     color: #fff;
     letter-spacing: 2px;
+    flex: 1;
+    text-align: center;
 }
 
 .logo h1{
@@ -54,7 +62,25 @@ body {
 .follow-us {
     font-size: 14px;
     color: #999;
-    margin-bottom: 10px;
+    flex: 0 0 150px;
+}
+
+.waitlist-button {
+    background-color: #8b98ea;
+    color: #000;
+    padding: 12px 24px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    flex: 0 0 150px;
+    text-align: center;
+}
+
+.waitlist-button:hover {
+    background-color: #a3aef5;
 }
 
 .hero {
