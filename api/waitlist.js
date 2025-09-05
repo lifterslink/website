@@ -26,11 +26,11 @@ export default async function handler(req, res) {
 
   // Airtable configuration
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
-  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || 'appXXXXXXXXXXXXXX'; // Replace with your base ID
+  const AIRTABLE_BASE_ID = process.env.AIRTABLE_BASE_ID || 'appdlFtFZ1Th6ALxh';
   const AIRTABLE_TABLE_NAME = process.env.AIRTABLE_TABLE_NAME || 'Waitlist';
 
   // Check if Airtable is configured
-  if (!AIRTABLE_API_KEY || AIRTABLE_BASE_ID === 'appXXXXXXXXXXXXXX') {
+  if (!AIRTABLE_API_KEY) {
     console.log('Airtable not configured. Email:', email);
     // Fallback: just log and return success
     return res.status(200).json({ 
