@@ -537,6 +537,12 @@ body::before {
     border: 1px solid rgba(76, 175, 80, 0.2);
 }
 
+.form-message.info {
+    background: rgba(100, 181, 246, 0.1);
+    color: #64b5f6;
+    border: 1px solid rgba(100, 181, 246, 0.2);
+}
+
 .form-message.error {
     background: rgba(244, 67, 54, 0.1);
     color: var(--error);

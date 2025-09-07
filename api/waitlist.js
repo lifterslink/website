@@ -87,9 +87,10 @@ export default async function handler(req, res) {
         
         if (response.status === 422) {
           // Field validation error - check if it's a duplicate
-          if (errorText.includes('duplicate') || errorText.includes('unique')) {
-            return res.status(400).json({ 
-              error: 'This email is already on the waitlist!' 
+          if (errorText.includes('duplicate') || errorText.includes('unique') || errorText.includes('UNIQUE_VIOLATION')) {
+            return res.status(409).json({ 
+              error: 'already_exists',
+              message: 'You\'re already on the list! We\'ll notify you when we launch.' 
             });
           }
           

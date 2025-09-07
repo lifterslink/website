@@ -206,8 +206,20 @@
         waitlistForm.addEventListener('submit', async (e) => {
             e.preventDefault();
             
-            const email = emailInput.value;
+            const email = emailInput.value.toLowerCase().trim();
             const submitButton = waitlistForm.querySelector('.submit-button');
+            
+            // Check if this email was already submitted from this device
+            const savedEmail = localStorage.getItem('lifterslink_waitlist_email');
+            if (savedEmail && savedEmail.toLowerCase() === email) {
+                messageDiv.className = 'form-message info show';
+                messageDiv.textContent = '✓ You\'re already on the list! We\'ll notify you when we launch.';
+                setTimeout(() => {
+                    messageDiv.className = 'form-message';
+                    messageDiv.textContent = '';
+                }, 4000);
+                return;
+            }
             
             // Show loading state
             submitButton.disabled = true;
@@ -249,10 +261,31 @@
                         submitButton.disabled = false;
                         submitButton.classList.remove('loading');
                     }, 3000);
+                } else if (response.status === 409 || data.error === 'already_exists') {
+                    // Already on waitlist
+                    messageDiv.className = 'form-message info show';
+                    messageDiv.textContent = data.message || '✓ You\'re already on the list! We\'ll notify you when we launch.';
+                    submitButton.disabled = false;
+                    submitButton.classList.remove('loading');
+                    
+                    // Still save to localStorage
+                    localStorage.setItem('lifterslink_waitlist_joined', 'true');
+                    localStorage.setItem('lifterslink_waitlist_email', email);
+                    
+                    setTimeout(() => {
+                        waitlistForm.classList.remove('reveal');
+                        waitlistForm.classList.add('hidden');
+                        triggerButton.classList.remove('hidden');
+                        triggerButton.textContent = '✓ On the Waitlist';
+                        triggerButton.disabled = true;
+                        triggerButton.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+                        messageDiv.className = 'form-message';
+                        messageDiv.textContent = '';
+                    }, 4000);
                 } else {
                     // Error
                     messageDiv.className = 'form-message error show';
-                    messageDiv.textContent = data.error || 'Something went wrong. Please try again.';
+                    messageDiv.textContent = data.message || data.error || 'Something went wrong. Please try again.';
                     submitButton.disabled = false;
                     submitButton.classList.remove('loading');
                     
