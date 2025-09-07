@@ -41,6 +41,9 @@ body {
     line-height: 1.6;
     overflow-x: hidden;
     position: relative;
+    /* Support for iPhone safe areas */
+    padding-top: env(safe-area-inset-top);
+    padding-bottom: env(safe-area-inset-bottom);
 }
 
 body::before {
@@ -793,6 +796,14 @@ footer::before {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+    /* Section spacing */
+    .about {
+        padding: 60px 0 50px;
+    }
+    
+    footer {
+        padding: 40px 0;
+    }
     .nav {
         padding: 12px 0;
     }
@@ -824,7 +835,7 @@ footer::before {
     }
     
     .hero {
-        padding: 90px 0 60px;
+        padding: 90px 0 40px;
         min-height: auto;
     }
     
@@ -902,6 +913,7 @@ footer::before {
     .waitlist-container {
         width: 100%;
         padding: 0 20px;
+        margin-bottom: 0;
     }
     
     .cta-button {
@@ -944,12 +956,22 @@ footer::before {
 
 /* iPhone specific styles */
 @media (max-width: 430px) {
+    /* Container and sections */
     .container {
         padding: 0 16px;
     }
     
     .hero {
-        padding: 85px 0 50px;
+        padding: 80px 0 30px;
+        min-height: auto;
+    }
+    
+    .about {
+        padding: 40px 0;
+    }
+    
+    footer {
+        padding: 30px 0;
     }
     
     .hero h2 {
@@ -963,12 +985,13 @@ footer::before {
     }
     
     .hero-divider {
-        margin: 20px auto;
+        margin: 18px auto;
         width: 50px;
+        height: 2px;
     }
     
     .hero-stats {
-        margin: 30px auto;
+        margin: 25px auto;
     }
     
     .stat-number {
@@ -980,12 +1003,14 @@ footer::before {
     }
     
     .stats-caption {
-        margin-top: -15px;
+        margin-top: -12px;
+        margin-bottom: 20px;
     }
     
     .about-content {
         padding: 20px !important;
         margin: 15px;
+        gap: 20px;
     }
     
     .about-text h3 {
@@ -1004,6 +1029,36 @@ footer::before {
     
     .image-box {
         height: 250px;
+        border-radius: 16px;
+    }
+    
+    /* Waitlist specific */
+    .waitlist-container {
+        margin-top: 15px;
+    }
+    
+    .cta-button {
+        padding: 14px 20px;
+        font-size: 14px;
+        letter-spacing: 0.5px;
+    }
+    
+    .form-message {
+        font-size: 13px;
+    }
+    
+    /* Footer adjustments */
+    .footer-content {
+        gap: 20px;
+    }
+    
+    .footer-content .logo {
+        font-size: 18px;
+    }
+    
+    .footer-nav a {
+        font-size: 13px;
+        padding: 8px 16px;
     }
 }
 
