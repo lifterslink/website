@@ -23,6 +23,9 @@ export default async function handler(req, res) {
   if (!email || !email.includes('@')) {
     return res.status(400).json({ error: 'Invalid email address' });
   }
+  
+  // Normalize email to lowercase for consistency
+  const normalizedEmail = email.toLowerCase().trim();
 
   // Airtable configuration
   const AIRTABLE_API_KEY = process.env.AIRTABLE_API_KEY;
@@ -31,7 +34,7 @@ export default async function handler(req, res) {
 
   // Check if Airtable is configured
   if (!AIRTABLE_API_KEY) {
-    console.log('Airtable not configured. Email:', email);
+    console.log('Airtable not configured. Email:', normalizedEmail);
     // Fallback: just log and return success
     return res.status(200).json({ 
       success: true, 
@@ -40,7 +43,29 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Add to Airtable
+    // First, check if email already exists (case-insensitive)
+    const checkUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}?filterByFormula=${encodeURIComponent(`LOWER({Email})="${normalizedEmail}"`)}`;
+    
+    const checkResponse = await fetch(checkUrl, {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
+      }
+    });
+    
+    if (checkResponse.ok) {
+      const existingRecords = await checkResponse.json();
+      if (existingRecords.records && existingRecords.records.length > 0) {
+        // Email already exists
+        console.log('Duplicate email detected:', normalizedEmail);
+        return res.status(409).json({ 
+          error: 'already_exists',
+          message: 'You\'re already on the list! We\'ll notify you when we launch.' 
+        });
+      }
+    }
+    
+    // Add to Airtable if not duplicate (store normalized email)
     const airtableUrl = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/${encodeURIComponent(AIRTABLE_TABLE_NAME)}`;
     
     const response = await fetch(airtableUrl, {
@@ -53,7 +78,7 @@ export default async function handler(req, res) {
         records: [
           {
             fields: {
-              Email: email
+              Email: normalizedEmail
             }
           }
         ]
@@ -124,7 +149,7 @@ export default async function handler(req, res) {
     console.error('Error processing waitlist signup:', error);
     
     // Save email to logs as backup
-    console.log('WAITLIST SIGNUP (error backup):', email, new Date().toISOString());
+    console.log('WAITLIST SIGNUP (error backup):', normalizedEmail, new Date().toISOString());
     
     // Return success to user even if Airtable fails
     // This ensures we don't lose signups
