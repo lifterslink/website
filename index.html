@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
-    <title>Lifters Link - Building the Platform Powerlifting Deserves</title>
+    <title>Bia - Building the Platform Powerlifting Deserves</title>
     
     <!-- SEO Meta Tags -->
-    <meta name="description" content="Lifters Link is the global community for powerlifters. Athletes, coaches, and meet directors can connect, track performance, and seamlessly organize meets—all in one place.">
+    <meta name="description" content="Bia is the global community for powerlifters. Athletes, coaches, and meet directors can connect, track performance, and seamlessly organize meets—all in one place.">
     <meta name="keywords" content="powerlifting, powerlifting platform, meet registration, powerlifting community, strength sports, squat, bench, deadlift, powerlifting meets, powerlifting coach">
     <meta name="author" content="Lifters Link">
     <meta name="robots" content="index, follow">
@@ -15,15 +15,15 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://lifterslink.com/">
-    <meta property="og:title" content="Lifters Link - Building the Platform Powerlifting Deserves">
+    <meta property="og:title" content="Bia - Building the Platform Powerlifting Deserves">
     <meta property="og:description" content="Stronger foundations for a stronger sport. Join the one-stop platform where athletes, coaches, and meet directors connect, track performance, and run meets seamlessly.">
     <meta property="og:image" content="https://lifterslink.com/images/og-image.png">
-    <meta property="og:site_name" content="Lifters Link">
+    <meta property="og:site_name" content="Bia">
     
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://lifterslink.com/">
-    <meta property="twitter:title" content="Lifters Link - Building the Platform Powerlifting Deserves">
+    <meta property="twitter:title" content="Bia - Building the Platform Powerlifting Deserves">
     <meta property="twitter:description" content="Stronger foundations for a stronger sport. Join the one-stop platform where athletes, coaches, and meet directors connect, track performance, and run meets seamlessly.">
     <meta property="twitter:image" content="https://lifterslink.com/images/og-image.png">
     
@@ -50,12 +50,12 @@
     {
         "@context": "https://schema.org",
         "@type": "Organization",
-        "name": "Lifters Link",
+        "name": "Bia",
         "url": "https://lifterslink.com",
         "description": "Building the platform powerlifting deserves. The global community for powerlifters, coaches, and meet directors.",
         "sameAs": [
-            "https://www.instagram.com/lifterslink/",
-            "https://www.linkedin.com/company/lifterslink/"
+            "https://www.instagram.com/buildingbia/",
+            "https://www.linkedin.com/company/buildingbia/"
         ]
     }
     </script>
@@ -72,10 +72,10 @@
     <header class="nav">
         <div class="container">
             <div class="logo-wrapper">
-                <img src="lifters_link.png" alt="Lifters Link logo - barbell with LL letters" class="logo-image" width="40" height="40">
-                <h1 class="logo">LIFTERS LINK</h1>
+                <img src="lifters_link.png" alt="Bia logo" class="logo-image" width="40" height="40">
+                <h1 class="logo">BIA</h1>
             </div>
-            <a href="https://www.instagram.com/lifterslink/" target="_blank" class="follow-us">Follow Us</a>
+            <a href="https://www.instagram.com/buildingbia/" target="_blank" class="follow-us">Follow Us</a>
         </div>
     </header>
 
@@ -131,7 +131,7 @@
         <div class="container">
             <div class="about-content glass-card">
                 <div class="about-text">
-                    <h3>Lifters Link is the global community for powerlifters.</h3>
+                    <h3>Bia is the global community for powerlifters.</h3>
                     <p class="lead">
                         Athletes, coaches, and meet directors can connect, track and showcase performance, 
                         and seamlessly organize, register for, and run meets—all in one place.
@@ -140,7 +140,7 @@
                     <h4>We're just warming up.</h4>
                     <p>
                         Like any good lift, it starts with a warm-up. We're testing, building, and getting stronger every day. 
-                        Follow our journey on <a href="https://www.instagram.com/lifterslink/">Instagram</a> to see what's next.
+                        Follow our journey on <a href="https://www.instagram.com/buildingbia/">Instagram</a> to see what's next.
                     </p>
                 </div>
                 <div class="about-image">
@@ -157,10 +157,10 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <h1 class="logo">LIFTERS LINK</h1>
+                <h1 class="logo">BIA</h1>
                 <nav class="footer-nav" aria-label="Footer navigation">
-                    <a href="https://www.instagram.com/lifterslink/">Instagram</a>
-                    <a href="https://www.linkedin.com/company/lifterslink/">LinkedIn</a>
+                    <a href="https://www.instagram.com/buildingbia/">Instagram</a>
+                    <a href="https://www.linkedin.com/company/buildingbia/">LinkedIn</a>
                 </nav>
             </div>
         </div>
@@ -186,7 +186,7 @@
             }
             
             // Check if user already joined waitlist
-            const hasJoined = localStorage.getItem('lifterslink_waitlist_joined');
+            const hasJoined = localStorage.getItem('bia_waitlist_joined') || localStorage.getItem('lifterslink_waitlist_joined');
             if (hasJoined) {
                 triggerButton.textContent = '✓ On the Waitlist';
                 triggerButton.disabled = true;
@@ -210,7 +210,7 @@
             const submitButton = waitlistForm.querySelector('.submit-button');
             
             // Check if this email was already submitted from this device
-            const savedEmail = localStorage.getItem('lifterslink_waitlist_email');
+            const savedEmail = localStorage.getItem('bia_waitlist_email') || localStorage.getItem('lifterslink_waitlist_email');
             if (savedEmail && savedEmail.toLowerCase() === email) {
                 messageDiv.className = 'form-message info show';
                 messageDiv.textContent = '✓ You\'re already on the list! We\'ll notify you when we launch.';
@@ -244,9 +244,9 @@
                     emailInput.value = '';
                     
                     // Save to localStorage to prevent resubmission
-                    localStorage.setItem('lifterslink_waitlist_joined', 'true');
-                    localStorage.setItem('lifterslink_waitlist_email', email);
-                    localStorage.setItem('lifterslink_waitlist_date', new Date().toISOString());
+                    localStorage.setItem('bia_waitlist_joined', 'true');
+                    localStorage.setItem('bia_waitlist_email', email);
+                    localStorage.setItem('bia_waitlist_date', new Date().toISOString());
                     
                     // Update button permanently
                     setTimeout(() => {
@@ -317,7 +317,7 @@
                 messageDiv.textContent = '';
                 
                 // Check if they've already joined
-                const hasJoined = localStorage.getItem('lifterslink_waitlist_joined');
+                const hasJoined = localStorage.getItem('bia_waitlist_joined') || localStorage.getItem('lifterslink_waitlist_joined');
                 if (hasJoined) {
                     triggerButton.textContent = '✓ On the Waitlist';
                     triggerButton.disabled = true;

@@ -1,12 +1,12 @@
-# Lifters Link Website
+# Bia Website
 
-The official marketing website for Lifters Link - a comprehensive platform for the global powerlifting community.
+The official marketing website for Bia - a comprehensive platform for the global powerlifting community.
 
-🌐 **Live Site**: [lifterslink.com](https://lifterslink.com)
+🌐 **Live Site**: [buildingbia.com](https://buildingbia.com)
 
-## 🎯 About Lifters Link
+## 🎯 About Bia
 
-Lifters Link is building infrastructure as strong as the sport itself. We're creating a platform where athletes, coaches, and meet directors can:
+Bia is building infrastructure as strong as the sport itself. We're creating a platform where athletes, coaches, and meet directors can:
 - Connect with the global powerlifting community
 - Register and organize competitions
 - Track and showcase performance history
@@ -141,13 +141,13 @@ See [`api/README.md`](api/README.md) for detailed integration instructions.
 
 ## 🤝 Connect
 
-- **Instagram**: [@lifterslink](https://www.instagram.com/lifterslink/)
-- **LinkedIn**: [Lifters Link](https://www.linkedin.com/company/lifterslink/)
-- **Website**: [lifterslink.com](https://lifterslink.com)
+- **Instagram**: [@buildingbia](https://www.instagram.com/buildingbia/)
+- **LinkedIn**: [Bia](https://www.linkedin.com/company/buildingbia/)
+- **Website**: [buildingbia.com](https://buildingbia.com)
 
 ## 📄 License
 
-© 2024 Lifters Link. All rights reserved.
+© 2024 Bia. All rights reserved.
 
 ---
 

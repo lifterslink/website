@@ -12,7 +12,7 @@ When creating commits:
 
 ## Project Overview
 
-Lifters Link (lifterslink.com) is a comprehensive platform for the global powerlifting community. This is the marketing website built with modern web standards and deployed on Vercel.
+Bia (buildingbia.com) is a comprehensive platform for the global powerlifting community. This is the marketing website built with modern web standards and deployed on Vercel.
 
 ## Current Design System
 
@@ -144,9 +144,9 @@ backdrop-filter: blur(20px)
 ```
 
 ## Important URLs
-- Production: https://lifterslink.com
-- Instagram: https://www.instagram.com/lifterslink/
-- LinkedIn: https://www.linkedin.com/company/lifterslink/
+- Production: https://buildingbia.com
+- Instagram: https://www.instagram.com/buildingbia/
+- LinkedIn: https://www.linkedin.com/company/buildingbia/
 
 ## Database & Data Sources
 
