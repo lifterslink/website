@@ -1,20 +1,31 @@
 :root {
-    --bg-primary: #11151c;
-    --bg-secondary: #0d1117;
-    --surface: #212d40;
-    --surface-light: rgba(33, 45, 64, 0.6);
-    --surface-secondary: #364156;
-    --accent: #d66853;
-    --accent-secondary: #7d4e57;
+    /* Black and Gold Theme */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #0f0f0f;
+    --surface: #1a1a1a;
+    --surface-light: rgba(26, 26, 26, 0.6);
+    --surface-secondary: #252525;
+    --accent: #d4af37;  /* Luxury gold */
+    --accent-secondary: #b8960f;  /* Darker gold */
+    --accent-hover: #f4d03f;  /* Bright gold for hover */
     --text-primary: #ffffff;
-    --text-secondary: #a8b2c7;
-    --text-muted: #6b7585;
+    --text-secondary: #b0b0b0;
+    --text-muted: #808080;
     --success: #4CAF50;
     --warning: #FF9800;
     --error: #F44336;
-    --border-subtle: rgba(255, 255, 255, 0.05);
-    --border-light: rgba(255, 255, 255, 0.1);
-    --glow-accent: rgba(214, 104, 83, 0.3);
+    --border-subtle: rgba(212, 175, 55, 0.1);
+    --border-light: rgba(212, 175, 55, 0.2);
+    --glow-accent: rgba(212, 175, 55, 0.4);
+    
+    /* Alternative: Dark Forest Green and Gold (uncomment to use) */
+    /*
+    --bg-primary: #0d1f0d;
+    --bg-secondary: #0a1a0a;
+    --surface: #1a2f1a;
+    --surface-light: rgba(26, 47, 26, 0.6);
+    --surface-secondary: #243324;
+    */
 }
 
 /* Focus visible for keyboard navigation */
