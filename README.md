@@ -56,16 +56,25 @@ This website features a modern, premium design that matches our mobile app aesth
 
 ```
 website/
-├── index.html           # Main landing page
-├── styles/
-│   └── styles.css      # All styling and animations
-├── images/
-│   └── LifterInAction.png
-├── api/
-│   ├── waitlist.js     # Serverless email collection
-│   └── README.md       # API integration guide
-├── bia_logo.png        # Logo and favicon
-└── CLAUDE.md           # Development context for AI assistance
+├── public/              # Static files (served root)
+│   ├── index.html      # Main landing page
+│   ├── manifest.json   # PWA manifest
+│   ├── robots.txt      # SEO robots file
+│   ├── sitemap.xml     # SEO sitemap
+│   └── assets/         # Static assets
+│       ├── styles/     # CSS files
+│       ├── images/     # Content images
+│       └── logos/      # Brand logos
+├── src/                 # Source code
+│   └── api/            # Serverless functions
+│       └── waitlist.js # Email collection
+├── docs/               # Documentation
+│   ├── CLAUDE.md       # AI context
+│   └── AIRTABLE_SETUP.md
+├── config/             # Configuration
+│   └── setup-vercel-env.sh
+├── package.json        # Project config
+└── vercel.json         # Deployment config
 ```
 
 ## 🔧 Development
@@ -83,13 +92,13 @@ cd website
 # Install Vercel CLI (if not installed)
 npm i -g vercel
 
-# Run local development server with API support
+# Run local development server
+npm run dev
+# or with API support
 vercel dev
 
-# Or for simple preview without API
-python -m http.server 8000
-# or
-npx serve
+# Or use serve
+npm run serve
 ```
 
 ### Deployment

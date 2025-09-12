@@ -1,0 +1,24 @@
+{
+  "name": "bia-website",
+  "version": "1.0.0",
+  "description": "Bia - The global community for powerlifters",
+  "private": true,
+  "scripts": {
+    "dev": "cd public && python3 -m http.server 8000",
+    "serve": "npx serve public",
+    "deploy": "vercel --prod"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lifterslink/website.git"
+  },
+  "keywords": [
+    "powerlifting",
+    "fitness",
+    "sports",
+    "community"
+  ],
+  "author": "Bia",
+  "license": "UNLICENSED",
+  "homepage": "https://buildingbia.com"
+}
