@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
     <title>Bia - Building the Platform Powerlifting Deserves</title>
     
     <!-- SEO Meta Tags -->
@@ -39,9 +40,15 @@
     <link rel="icon" type="image/png" sizes="40x40" href="bia_logo_40.png">
     <link rel="icon" type="image/png" sizes="192x192" href="bia_logo_192.png">
     <link rel="apple-touch-icon" href="bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://api.airtable.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="styles/styles.css">
@@ -78,7 +85,9 @@
                      alt="Bia logo" 
                      class="logo-image" 
                      width="40" 
-                     height="40">
+                     height="40"
+                     decoding="async"
+                     fetchpriority="high">
                 <h1 class="logo">BIA</h1>
             </div>
             <a href="https://www.instagram.com/buildingbia/" target="_blank" class="follow-us">Follow Us</a>
@@ -116,10 +125,10 @@
                 <p class="stats-caption">2024 Competition Data</p>
             </div>
             <div class="waitlist-container">
-                <button id="waitlist-trigger" class="cta-button">Join the Waitlist</button>
-                <form id="waitlist-form" class="waitlist-form hidden">
+                <button id="waitlist-trigger" class="cta-button" aria-label="Open waitlist signup form">Join the Waitlist</button>
+                <form id="waitlist-form" class="waitlist-form hidden" role="form" aria-label="Email waitlist signup">
                     <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                        <input type="email" id="email" name="email" placeholder="Enter your email" required autocomplete="email" aria-label="Email address" aria-required="true">
                         <button type="submit" class="submit-button" aria-label="Submit email">
                             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
                                 <polyline points="9 18 15 12 9 6"></polyline>
@@ -151,7 +160,12 @@
                 </div>
                 <div class="about-image">
                     <div class="image-box">
-                        <img src="images/celeste.jpg" alt="Celeste competing at IPF/NAPF North American Regional Powerlifting Championships representing Canada" loading="lazy">
+                        <img src="images/celeste.jpg" 
+                             alt="Celeste competing at IPF/NAPF North American Regional Powerlifting Championships representing Canada" 
+                             loading="lazy"
+                             decoding="async"
+                             width="500"
+                             height="500">
                     </div>
                 </div>
             </div>
@@ -160,7 +174,7 @@
     </main>
 
     <!-- Footer -->
-    <footer>
+    <footer role="contentinfo">
         <div class="container">
             <div class="footer-content">
                 <h1 class="logo">BIA</h1>
