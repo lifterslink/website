@@ -16,16 +16,17 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 
 ## Current Design System
 
-### Color Palette (Matching App Theme)
+### Color Palette (Black & Gold Theme)
 ```css
---bg-primary: #11151c (Very dark navy/black)
---surface: #212d40 (Dark blue-gray for cards)
---surface-light: rgba(33, 45, 64, 0.6) (Glassmorphism)
---accent: #d66853 (Coral/salmon - primary accent)
---accent-secondary: #7d4e57 (Muted rose/mauve)
+--bg-primary: #0a0a0a (Pure black)
+--surface: #1a1a1a (Dark surface)
+--surface-light: rgba(26, 26, 26, 0.6) (Glassmorphism)
+--accent: #d4af37 (Luxury gold - primary accent)
+--accent-secondary: #b8960f (Darker gold)
+--accent-hover: #f4d03f (Bright gold for hover)
 --text-primary: #ffffff
---text-secondary: #a8b2c7
---text-muted: #6b7585
+--text-secondary: #b0b0b0
+--text-muted: #808080
 ```
 
 ### Typography
@@ -42,11 +43,11 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 
 ## Project Structure
 
-- `index.html` - Main landing page with hero, waitlist form, content sections
-- `styles/styles.css` - Complete styling with glassmorphism and animations
-- `api/waitlist.js` - Vercel serverless function for email collection
-- `bia_logo.png` - App logo/icon used in header and as favicon
-- `images/` - Image assets including LifterInAction.png
+- `public/index.html` - Main landing page with hero, waitlist form, content sections
+- `public/assets/styles/styles.css` - Complete styling with glassmorphism and animations
+- `src/api/waitlist.js` - Vercel serverless function for email collection
+- `public/assets/logos/` - All logo variations (40px, 192px, 512px)
+- `public/assets/images/` - Content images including athlete photos
 
 ## Key Features
 
