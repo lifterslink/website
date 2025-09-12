@@ -64,7 +64,7 @@ website/
 ├── api/
 │   ├── waitlist.js     # Serverless email collection
 │   └── README.md       # API integration guide
-├── lifters_link.png    # Logo and favicon
+├── bia_logo.png        # Logo and favicon
 └── CLAUDE.md           # Development context for AI assistance
 ```
 
