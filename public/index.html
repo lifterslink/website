@@ -48,7 +48,8 @@
     <link rel="dns-prefetch" href="https://api.airtable.com">
     
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
     
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/assets/styles/styles.css">
@@ -60,15 +61,43 @@
         "@type": "Organization",
         "name": "Bia",
         "url": "https://buildingbia.com",
+        "logo": "https://buildingbia.com/assets/logos/bia_logo_512.png",
         "description": "Building the platform powerlifting deserves. The global community for powerlifters, coaches, and meet directors.",
+        "foundingDate": "2024",
         "sameAs": [
             "https://www.instagram.com/buildingbia/",
             "https://www.linkedin.com/company/buildingbia/"
-        ]
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "contactType": "customer support",
+            "availableLanguage": "English"
+        }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "Bia Platform",
+        "url": "https://buildingbia.com",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "iOS, Android",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "140000"
+        }
     }
     </script>
 </head>
 <body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
     <noscript>
         <style>
             .waitlist-form { display: block !important; opacity: 1 !important; }
@@ -94,7 +123,7 @@
         </div>
     </header>
 
-    <main>
+    <main id="main-content">
     <section class="hero" role="banner" aria-label="Hero section">
         <div class="hero-background">
             <div class="hero-gradient"></div>
@@ -142,7 +171,7 @@
     </section>
 
     <!-- About Section -->
-    <section class="about" aria-label="About Lifters Link">
+    <section class="about" aria-label="About Bia">
         <div class="container">
             <div class="about-content glass-card">
                 <div class="about-text">
@@ -155,17 +184,20 @@
                     <h4>We're just warming up.</h4>
                     <p>
                         Like any good lift, it starts with a warm-up. We're testing, building, and getting stronger every day. 
-                        Follow our journey on <a href="https://www.instagram.com/buildingbia/">Instagram</a> to see what's next.
+                        Follow our journey on <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer">Instagram</a> to see what's next.
                     </p>
                 </div>
                 <div class="about-image">
                     <div class="image-box">
-                        <img src="/assets/images/celeste-optimized.jpg" 
-                             alt="Celeste competing at IPF/NAPF North American Regional Powerlifting Championships representing Canada" 
-                             loading="lazy"
-                             decoding="async"
-                             width="600"
-                             height="600">
+                        <picture>
+                            <source srcset="/assets/images/celeste-optimized.jpg" type="image/jpeg">
+                            <img src="/assets/images/celeste-optimized.jpg" 
+                                 alt="Celeste competing at IPF/NAPF North American Regional Powerlifting Championships representing Canada" 
+                                 loading="lazy"
+                                 decoding="async"
+                                 width="600"
+                                 height="600">
+                        </picture>
                     </div>
                 </div>
             </div>
@@ -187,6 +219,15 @@
     </footer>
 
     <script>
+        // Register Service Worker
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js')
+                    .then(registration => console.log('SW registered:', registration))
+                    .catch(error => console.log('SW registration failed:', error));
+            });
+        }
+
         // Ensure DOM is loaded
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', initWaitlist);

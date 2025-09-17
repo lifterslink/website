@@ -39,7 +39,7 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 2. **Smooth Animations**: Cubic-bezier easing for premium feel
 3. **Micro-interactions**: Hover effects, shimmer animations, floating backgrounds
 4. **Dark Premium Aesthetic**: Matching the app's sophisticated look
-5. **Coral Accent Usage**: CTAs, links, and important interactive elements
+5. **Gold Accent Usage**: CTAs, links, and important interactive elements
 
 ## Project Structure
 
@@ -101,10 +101,11 @@ See `api/README.md` for integration instructions.
 ## Recent Major Updates
 
 1. **Complete Redesign** (Latest)
-   - Implemented app-matching color scheme with coral accent
+   - Implemented black and gold luxury theme (#E9B949 accent)
    - Added glassmorphism throughout site
    - Created reveal-style waitlist form
    - Enhanced with micro-interactions and animations
+   - Rebranded from Lifters Link to Bia
 
 2. **Waitlist Integration**
    - Replaced Google Forms with native email collection

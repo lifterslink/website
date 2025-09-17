@@ -16,8 +16,8 @@ Bia is building infrastructure as strong as the sport itself. We're creating a p
 
 This website features a modern, premium design that matches our mobile app aesthetic:
 
-- **Dark Theme**: Deep navy (#11151c) background with sophisticated layering
-- **Coral Accent**: Vibrant coral (#d66853) for CTAs and interactive elements
+- **Dark Theme**: Pure black (#0a0a0a) background with sophisticated layering
+- **Gold Accent**: Custom gold (#E9B949) for CTAs and interactive elements
 - **Glassmorphism**: Frosted glass effects throughout for depth and elegance
 - **Micro-interactions**: Smooth animations and hover effects for engagement
 - **Responsive**: Mobile-first design that looks great on all devices
@@ -124,11 +124,12 @@ See [`api/README.md`](api/README.md) for detailed integration instructions.
 ## 🎨 Design System
 
 ### Colors
-- Background: `#11151c`
-- Surface: `#212d40`
-- Accent: `#d66853`
+- Background: `#0a0a0a` (Pure black)
+- Surface: `#1a1a1a` (Dark surface)
+- Accent: `#E9B949` (Custom gold)
+- Accent Hover: `#F4C955` (Bright gold)
 - Text Primary: `#ffffff`
-- Text Secondary: `#a8b2c7`
+- Text Secondary: `#b0b0b0`
 
 ### Typography
 - Headers: Rubik (700-800 weight)
