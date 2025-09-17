@@ -56,7 +56,7 @@ This website features a modern, premium design that matches our mobile app aesth
 
 ```
 website/
-├── public/              # Static files (served root)
+├── public/              # Static files (served as root)
 │   ├── index.html      # Main landing page
 │   ├── manifest.json   # PWA manifest
 │   ├── robots.txt      # SEO robots file
@@ -65,14 +65,14 @@ website/
 │       ├── styles/     # CSS files
 │       ├── images/     # Content images
 │       └── logos/      # Brand logos
-├── src/                 # Source code
-│   └── api/            # Serverless functions
-│       └── waitlist.js # Email collection
+├── api/                # Serverless functions
+│   ├── waitlist.js     # Email collection endpoint
+│   └── README.md       # API documentation
 ├── docs/               # Documentation
-│   ├── CLAUDE.md       # AI context
 │   └── AIRTABLE_SETUP.md
 ├── config/             # Configuration
 │   └── setup-vercel-env.sh
+├── CLAUDE.md           # AI assistant context
 ├── package.json        # Project config
 └── vercel.json         # Deployment config
 ```

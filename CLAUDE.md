@@ -45,7 +45,7 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 
 - `public/index.html` - Main landing page with hero, waitlist form, content sections
 - `public/assets/styles/styles.css` - Complete styling with glassmorphism and animations
-- `src/api/waitlist.js` - Vercel serverless function for email collection
+- `api/waitlist.js` - Vercel serverless function for email collection
 - `public/assets/logos/` - All logo variations (40px, 192px, 512px)
 - `public/assets/images/` - Content images including athlete photos
 

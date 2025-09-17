@@ -1,15 +1,6 @@
 {
-  "functions": {
-    "src/api/waitlist.js": {
-      "maxDuration": 10
-    }
-  },
-  "rewrites": [
-    {
-      "source": "/api/(.*)",
-      "destination": "/src/api/$1"
-    }
-  ],
+  "buildCommand": "echo 'No build required'",
+  "outputDirectory": "public",
   "headers": [
     {
       "source": "/assets/(.*)",
@@ -34,9 +25,12 @@
         {
           "key": "X-XSS-Protection",
           "value": "1; mode=block"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
         }
       ]
     }
-  ],
-  "outputDirectory": "public"
+  ]
 }
