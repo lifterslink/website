@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>Powerlifting Resources & Guides - Bia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Essential powerlifting resources, meet preparation guides, training tips, and federation rules. Everything you need to succeed in competitive powerlifting.">
+    <meta name="keywords" content="powerlifting guide, meet preparation, powerlifting rules, squat technique, bench press form, deadlift tips, powerlifting equipment, weight classes, powerlifting federations">
+    <meta name="author" content="Bia">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buildingbia.com/resources">
+    <meta property="og:title" content="Powerlifting Resources & Guides - Bia">
+    <meta property="og:description" content="Essential powerlifting resources, meet preparation guides, and training tips for competitive powerlifters.">
+    <meta property="og:image" content="https://buildingbia.com/assets/logos/bia_logo_512.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buildingbia.com/resources">
+    
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="/assets/logos/bia_logo_40.png">
+    <link rel="apple-touch-icon" href="/assets/logos/bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <style>
+        .resources-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: linear-gradient(135deg, rgba(233, 185, 73, 0.05) 0%, transparent 100%);
+        }
+        
+        .resources-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .resource-card {
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+        
+        .resource-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--accent);
+            box-shadow: 0 10px 30px rgba(233, 185, 73, 0.1);
+        }
+        
+        .resource-card h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .resource-card p {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        
+        .resource-link {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .resource-link:hover {
+            color: var(--accent-hover);
+        }
+        
+        .faq-section {
+            padding: 60px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            margin-bottom: 20px;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--text-primary);
+            transition: background 0.3s;
+        }
+        
+        .faq-question:hover {
+            background: rgba(233, 185, 73, 0.05);
+        }
+        
+        .faq-answer {
+            padding: 0 20px 20px;
+            color: var(--text-secondary);
+            line-height: 1.6;
+        }
+        
+        .coming-soon {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--bg-primary);
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [{
+            "@type": "Question",
+            "name": "What equipment do I need for my first powerlifting meet?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "For your first meet, you'll need: an approved singlet, flat-soled shoes (or deadlift slippers), knee-high socks for deadlifts, and a belt (optional but recommended). Check your federation's approved equipment list for specific brand requirements."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How do weight classes work in powerlifting?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Powerlifting competitions are divided into weight classes to ensure fair competition. IPF weight classes for men are: 59kg, 66kg, 74kg, 83kg, 93kg, 105kg, 120kg, 120kg+. For women: 47kg, 52kg, 57kg, 63kg, 69kg, 76kg, 84kg, 84kg+."
+            }
+        }, {
+            "@type": "Question",
+            "name": "What's the difference between equipped and raw powerlifting?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Raw powerlifting allows minimal equipment: belt, wrist wraps, and knee sleeves. Equipped powerlifting permits supportive gear like squat/deadlift suits and bench shirts that can significantly increase the weight lifted."
+            }
+        }, {
+            "@type": "Question",
+            "name": "How do I qualify for nationals or international meets?",
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Qualification standards vary by federation. Typically, you need to achieve a qualifying total at a sanctioned local or regional meet. Check your federation's website for specific qualifying totals for your weight class and division."
+            }
+        }]
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="container">
+            <a href="/" class="logo-wrapper" style="text-decoration: none;">
+                <img src="/assets/logos/bia_logo_40.png" 
+                     srcset="/assets/logos/bia_logo_40.png 1x, /assets/logos/bia_logo_192.png 2x" 
+                     alt="Bia logo" 
+                     class="logo-image" 
+                     width="40" 
+                     height="40">
+                <h1 class="logo">BIA</h1>
+            </a>
+            <nav style="display: flex; gap: 30px; align-items: center;">
+                <a href="/" style="color: var(--text-secondary); text-decoration: none;">Home</a>
+                <a href="/resources" style="color: var(--accent); text-decoration: none;">Resources</a>
+                <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" class="follow-us">Follow Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="resources-hero">
+            <div class="container">
+                <h1 style="font-size: 3rem; margin-bottom: 20px;">Powerlifting Resources</h1>
+                <p style="font-size: 1.2rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                    Everything you need to know about competitive powerlifting - from your first meet to elite competition
+                </p>
+            </div>
+        </section>
+
+        <!-- Resources Grid -->
+        <section class="resources-grid">
+            <article class="resource-card">
+                <h3>First Meet Guide</h3>
+                <p>Complete walkthrough for your first powerlifting competition. Learn about weigh-ins, attempt selection, and meet day logistics.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+
+            <article class="resource-card">
+                <h3>Federation Rules</h3>
+                <p>Comprehensive breakdown of rules across major federations including IPF, USAPL, USPA, and more.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+
+            <article class="resource-card">
+                <h3>Equipment Guide</h3>
+                <p>Detailed reviews and recommendations for belts, shoes, sleeves, and other powerlifting gear.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+
+            <article class="resource-card">
+                <h3>Training Programs</h3>
+                <p>Popular powerlifting programs explained - from beginner linear progression to advanced periodization.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+
+            <article class="resource-card">
+                <h3>Technique Guides</h3>
+                <p>Master the squat, bench press, and deadlift with detailed form guides and common error fixes.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+
+            <article class="resource-card">
+                <h3>Nutrition & Recovery</h3>
+                <p>Optimize your performance with guides on meet day nutrition, weight cuts, and recovery protocols.</p>
+                <span class="coming-soon">Coming Soon</span>
+            </article>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="faq-section">
+            <h2 style="font-size: 2.5rem; margin-bottom: 40px; text-align: center;">Frequently Asked Questions</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What equipment do I need for my first powerlifting meet?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    For your first meet, you'll need: an approved singlet, flat-soled shoes (or deadlift slippers), 
+                    knee-high socks for deadlifts, and a belt (optional but recommended). Check your federation's 
+                    approved equipment list for specific brand requirements.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do weight classes work in powerlifting?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Powerlifting competitions are divided into weight classes to ensure fair competition. 
+                    IPF weight classes for men are: 59kg, 66kg, 74kg, 83kg, 93kg, 105kg, 120kg, 120kg+. 
+                    For women: 47kg, 52kg, 57kg, 63kg, 69kg, 76kg, 84kg, 84kg+.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>What's the difference between equipped and raw powerlifting?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Raw powerlifting allows minimal equipment: belt, wrist wraps, and knee sleeves. 
+                    Equipped powerlifting permits supportive gear like squat/deadlift suits and bench shirts 
+                    that can significantly increase the weight lifted.
+                </div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">
+                    <span>How do I qualify for nationals or international meets?</span>
+                    <span>▼</span>
+                </div>
+                <div class="faq-answer">
+                    Qualification standards vary by federation. Typically, you need to achieve a qualifying total 
+                    at a sanctioned local or regional meet. Check your federation's website for specific qualifying 
+                    totals for your weight class and division.
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="text-align: center; padding: 80px 20px; background: linear-gradient(135deg, rgba(233, 185, 73, 0.1) 0%, transparent 100%);">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Ready to Start Your Powerlifting Journey?</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 30px;">Join Bia to connect with the global powerlifting community</p>
+            <a href="/" class="cta-button" style="display: inline-block;">Join the Waitlist</a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <h1 class="logo">BIA</h1>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/" aria-label="Home">Home</a>
+                    <a href="/resources" aria-label="Resources">Resources</a>
+                    <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" aria-label="Follow Bia on Instagram">Instagram</a>
+                    <a href="https://www.linkedin.com/company/buildingbia/" target="_blank" rel="noopener noreferrer" aria-label="Connect with Bia on LinkedIn">LinkedIn</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const arrow = question.querySelector('span:last-child');
+                
+                if (answer.style.display === 'block') {
+                    answer.style.display = 'none';
+                    arrow.textContent = '▼';
+                } else {
+                    answer.style.display = 'block';
+                    arrow.textContent = '▲';
+                }
+            });
+        });
+
+        // Initially hide all answers
+        document.querySelectorAll('.faq-answer').forEach(answer => {
+            answer.style.display = 'none';
+        });
+    </script>
+</body>
+</html>

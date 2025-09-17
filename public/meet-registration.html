@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" prefix="og: http://ogp.me/ns#">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Powerlifting Meet Registration Platform - Bia</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Register for powerlifting meets online. Find competitions near you, manage entries, and track your competition history all in one platform.">
+    <meta name="keywords" content="powerlifting meet registration, powerlifting competition signup, find powerlifting meets, powerlifting meet entry, competition registration">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buildingbia.com/meet-registration">
+    <meta property="og:title" content="Powerlifting Meet Registration - Bia">
+    <meta property="og:description" content="Simplify meet registration for athletes and meet directors. Register online, manage entries, and track competitions.">
+    <meta property="og:image" content="https://buildingbia.com/assets/logos/bia_logo_512.png">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buildingbia.com/meet-registration">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#0a0a0a">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="/assets/logos/bia_logo_40.png">
+    <link rel="apple-touch-icon" href="/assets/logos/bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+    
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+    <style>
+        .landing-hero {
+            padding: 140px 20px 80px;
+            background: linear-gradient(135deg, rgba(233, 185, 73, 0.1) 0%, transparent 100%);
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            padding: 60px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .feature {
+            text-align: center;
+        }
+        
+        .feature-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .stats-bar {
+            background: var(--surface);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .stats-container {
+            display: flex;
+            justify-content: space-around;
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        
+        .benefit-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .benefit-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .benefit-content h3 {
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+        
+        .benefit-visual {
+            background: var(--surface);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            min-height: 300px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "Bia Meet Registration",
+        "applicationCategory": "SportsApplication",
+        "operatingSystem": "Web, iOS, Android",
+        "description": "Online powerlifting meet registration platform for athletes and meet directors",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "ratingCount": "3900"
+        }
+    }
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="container">
+            <a href="/" class="logo-wrapper" style="text-decoration: none;">
+                <img src="/assets/logos/bia_logo_40.png" 
+                     srcset="/assets/logos/bia_logo_40.png 1x, /assets/logos/bia_logo_192.png 2x" 
+                     alt="Bia logo" 
+                     class="logo-image" 
+                     width="40" 
+                     height="40">
+                <h1 class="logo">BIA</h1>
+            </a>
+            <nav style="display: flex; gap: 30px; align-items: center;">
+                <a href="/" style="color: var(--text-secondary); text-decoration: none;">Home</a>
+                <a href="/resources" style="color: var(--text-secondary); text-decoration: none;">Resources</a>
+                <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" class="follow-us">Follow Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <!-- Hero Section -->
+        <section class="landing-hero">
+            <div class="container" style="text-align: center;">
+                <h1 style="font-size: 3.5rem; margin-bottom: 30px; line-height: 1.1;">
+                    The Future of Powerlifting<br>
+                    Meet Registration
+                </h1>
+                <p style="font-size: 1.3rem; color: var(--text-secondary); max-width: 700px; margin: 0 auto 40px;">
+                    Register for meets in seconds. Manage entries effortlessly. 
+                    Track your competition history forever.
+                </p>
+                <a href="/" class="cta-button" style="display: inline-block;">Join the Waitlist</a>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <section class="stats-bar">
+            <div class="stats-container">
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">3,900+</div>
+                    <div style="color: var(--text-secondary);">Meets in 2024</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">140K+</div>
+                    <div style="color: var(--text-secondary);">Active Athletes</div>
+                </div>
+                <div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--accent);">228</div>
+                    <div style="color: var(--text-secondary);">Federations</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="feature-grid">
+            <div class="feature">
+                <div class="feature-icon">🔍</div>
+                <h3>Find Meets Instantly</h3>
+                <p style="color: var(--text-secondary);">
+                    Search upcoming competitions by location, federation, and date. 
+                    Never miss a meet near you.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">⚡</div>
+                <h3>Register in Seconds</h3>
+                <p style="color: var(--text-secondary);">
+                    One-click registration with saved athlete info. 
+                    No more filling the same forms repeatedly.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📊</div>
+                <h3>Track Your History</h3>
+                <p style="color: var(--text-secondary);">
+                    All your competition results in one place. 
+                    Monitor progress and qualifying totals.
+                </p>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🏆</div>
+                <h3>Manage Entries</h3>
+                <p style="color: var(--text-secondary);">
+                    Update attempts, check start lists, and receive 
+                    real-time meet updates.
+                </p>
+            </div>
+        </section>
+
+        <!-- Benefits for Athletes -->
+        <section class="benefit-section">
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">For Athletes</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Everything you need to compete, all in one platform
+            </p>
+            
+            <div class="benefit-grid">
+                <div class="benefit-content">
+                    <h3>Never Miss a Competition</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Get notified about meets in your area. Filter by federation, 
+                        weight class, and qualifying requirements. Save your favorite 
+                        venues and get alerts when they host new competitions.
+                    </p>
+                </div>
+                <div class="benefit-visual">
+                    <div style="color: var(--text-muted);">
+                        [Meet Calendar Visualization]
+                    </div>
+                </div>
+            </div>
+
+            <div class="benefit-grid" style="margin-top: 40px;">
+                <div class="benefit-visual">
+                    <div style="color: var(--text-muted);">
+                        [Competition Stats Dashboard]
+                    </div>
+                </div>
+                <div class="benefit-content">
+                    <h3>Your Complete Competition Profile</h3>
+                    <p style="color: var(--text-secondary); line-height: 1.6;">
+                        Track all your meets, PRs, and rankings in one place. 
+                        Share your profile with coaches and sponsors. Export your 
+                        competition history for federation applications.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Benefits for Meet Directors -->
+        <section class="benefit-section" style="background: var(--bg-secondary);">
+            <h2 style="font-size: 2.5rem; text-align: center; margin-bottom: 20px;">For Meet Directors</h2>
+            <p style="text-align: center; color: var(--text-secondary); max-width: 600px; margin: 0 auto;">
+                Streamline your meet management from registration to results
+            </p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 60px;">
+                <div class="glass-card" style="padding: 30px;">
+                    <h4 style="color: var(--accent); margin-bottom: 15px;">Automated Registration</h4>
+                    <p style="color: var(--text-secondary);">
+                        Accept entries, process payments, and manage waitlists automatically. 
+                        No more spreadsheet juggling.
+                    </p>
+                </div>
+                <div class="glass-card" style="padding: 30px;">
+                    <h4 style="color: var(--accent); margin-bottom: 15px;">Real-time Management</h4>
+                    <p style="color: var(--text-secondary);">
+                        Update start lists, post results, and communicate with athletes 
+                        instantly through the platform.
+                    </p>
+                </div>
+                <div class="glass-card" style="padding: 30px;">
+                    <h4 style="color: var(--accent); margin-bottom: 15px;">Federation Compliance</h4>
+                    <p style="color: var(--text-secondary);">
+                        Built-in support for federation rules, membership verification, 
+                        and qualifying total checks.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section style="text-align: center; padding: 100px 20px; background: linear-gradient(135deg, rgba(233, 185, 73, 0.15) 0%, transparent 100%);">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px;">
+                Join the Platform That's<br>
+                Building Powerlifting's Future
+            </h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 40px; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Be part of the community that's making competitive powerlifting 
+                more accessible, organized, and connected than ever before.
+            </p>
+            <a href="/" class="cta-button" style="display: inline-block; font-size: 1.1rem; padding: 16px 40px;">
+                Get Early Access
+            </a>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <h1 class="logo">BIA</h1>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/" aria-label="Home">Home</a>
+                    <a href="/resources" aria-label="Resources">Resources</a>
+                    <a href="/meet-registration" aria-label="Meet Registration">Meet Registration</a>
+                    <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/buildingbia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
