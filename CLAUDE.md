@@ -21,9 +21,9 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 --bg-primary: #0a0a0a (Pure black)
 --surface: #1a1a1a (Dark surface)
 --surface-light: rgba(26, 26, 26, 0.6) (Glassmorphism)
---accent: #d4af37 (Luxury gold - primary accent)
---accent-secondary: #b8960f (Darker gold)
---accent-hover: #f4d03f (Bright gold for hover)
+--accent: #E9B949 (Custom gold - primary accent)
+--accent-secondary: #D4A33C (Darker gold)
+--accent-hover: #F4C955 (Bright gold for hover)
 --text-primary: #ffffff
 --text-secondary: #b0b0b0
 --text-muted: #808080

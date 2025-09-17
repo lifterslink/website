@@ -5,18 +5,18 @@
     --surface: #1a1a1a;
     --surface-light: rgba(26, 26, 26, 0.6);
     --surface-secondary: #252525;
-    --accent: #d4af37;  /* Luxury gold */
-    --accent-secondary: #b8960f;  /* Darker gold */
-    --accent-hover: #f4d03f;  /* Bright gold for hover */
+    --accent: #E9B949;  /* Custom gold */
+    --accent-secondary: #D4A33C;  /* Darker gold */
+    --accent-hover: #F4C955;  /* Bright gold for hover */
     --text-primary: #ffffff;
     --text-secondary: #b0b0b0;
     --text-muted: #808080;
     --success: #4CAF50;
     --warning: #FF9800;
     --error: #F44336;
-    --border-subtle: rgba(212, 175, 55, 0.1);
-    --border-light: rgba(212, 175, 55, 0.2);
-    --glow-accent: rgba(212, 175, 55, 0.4);
+    --border-subtle: rgba(233, 185, 73, 0.1);
+    --border-light: rgba(233, 185, 73, 0.2);
+    --glow-accent: rgba(233, 185, 73, 0.4);
     
     /* Alternative: Dark Forest Green and Gold (uncomment to use) */
     /*
@@ -65,8 +65,8 @@ body::before {
     right: 0;
     bottom: 0;
     background: 
-        radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
-        radial-gradient(circle at 80% 80%, rgba(184, 150, 15, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 20% 50%, rgba(233, 185, 73, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 80% 80%, rgba(212, 163, 60, 0.05) 0%, transparent 50%),
         radial-gradient(circle at 40% 20%, rgba(54, 65, 86, 0.1) 0%, transparent 50%);
     pointer-events: none;
     z-index: 1;
@@ -126,7 +126,7 @@ body::before {
 }
 
 .logo-wrapper:hover .logo-image {
-    filter: drop-shadow(0 4px 16px rgba(212, 175, 55, 0.6));
+    filter: drop-shadow(0 4px 16px rgba(233, 185, 73, 0.6));
     transform: scale(1.08) rotate(2deg);
 }
 
@@ -142,7 +142,7 @@ body::before {
     height: 40px;
     object-fit: contain;
     border-radius: 10px;
-    filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.25));
+    filter: drop-shadow(0 2px 6px rgba(233, 185, 73, 0.25));
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform, filter;
@@ -177,7 +177,7 @@ body::before {
 }
 
 .follow-us:hover {
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(233, 185, 73, 0.1);
     border-color: var(--accent);
     color: var(--accent);
     transform: translateY(-2px);
@@ -205,7 +205,7 @@ body::before {
     inset: 0;
     background: 
         radial-gradient(circle at 20% 50%, var(--glow-accent) 0%, transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(184, 150, 15, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(212, 163, 60, 0.2) 0%, transparent 40%),
         radial-gradient(circle at 50% 100%, rgba(54, 65, 86, 0.3) 0%, transparent 60%);
     animation: float 8s ease-in-out infinite;
     opacity: 0.6;
@@ -286,8 +286,8 @@ body::before {
     letter-spacing: -2px;
     color: var(--text-primary);
     text-shadow: 
-        0 0 80px rgba(212, 175, 55, 0.3),
-        0 0 40px rgba(212, 175, 55, 0.2);
+        0 0 80px rgba(233, 185, 73, 0.3),
+        0 0 40px rgba(233, 185, 73, 0.2);
 }
 
 .subheading {
@@ -350,7 +350,7 @@ body::before {
     font-weight: 700;
     color: var(--accent);
     letter-spacing: -1px;
-    text-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    text-shadow: 0 0 30px rgba(233, 185, 73, 0.4);
 }
 
 .stat-label {
@@ -381,10 +381,10 @@ body::before {
 
 @keyframes gentleGlow {
     0%, 100% {
-        filter: drop-shadow(0 2px 6px rgba(212, 175, 55, 0.25));
+        filter: drop-shadow(0 2px 6px rgba(233, 185, 73, 0.25));
     }
     50% {
-        filter: drop-shadow(0 3px 8px rgba(212, 175, 55, 0.35));
+        filter: drop-shadow(0 3px 8px rgba(233, 185, 73, 0.35));
     }
 }
 
@@ -490,7 +490,7 @@ body::before {
 .form-group:focus-within {
     border-color: var(--accent);
     box-shadow: 
-        0 0 0 3px rgba(212, 175, 55, 0.1), 
+        0 0 0 3px rgba(233, 185, 73, 0.1), 
         0 10px 40px rgba(0, 0, 0, 0.4),
         inset 0 1px 0 rgba(255, 255, 255, 0.1);
 }
@@ -631,7 +631,7 @@ body::before {
     height: 1px;
     background: linear-gradient(90deg, 
         transparent, 
-        rgba(212, 175, 55, 0.5), 
+        rgba(233, 185, 73, 0.5), 
         transparent);
     animation: shimmer 3s ease-in-out infinite;
 }
@@ -829,7 +829,7 @@ footer::before {
 
 .footer-nav a:hover {
     color: var(--accent);
-    background: rgba(212, 175, 55, 0.1);
+    background: rgba(233, 185, 73, 0.1);
 }
 
 .footer-nav a:hover::before {

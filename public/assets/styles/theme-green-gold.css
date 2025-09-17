@@ -7,9 +7,9 @@
     --surface: #1a2f1a;
     --surface-light: rgba(26, 47, 26, 0.6);
     --surface-secondary: #243324;
-    --accent: #d4af37;  /* Luxury gold */
-    --accent-secondary: #b8960f;  /* Darker gold */
-    --accent-hover: #f4d03f;  /* Bright gold for hover */
+    --accent: #E9B949;  /* Custom gold */
+    --accent-secondary: #D4A33C;  /* Darker gold */
+    --accent-hover: #F4C955;  /* Bright gold for hover */
     --text-primary: #ffffff;
     --text-secondary: #b8c5b8;
     --text-muted: #8a958a;
