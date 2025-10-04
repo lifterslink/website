@@ -20,5 +20,8 @@
   ],
   "author": "Bia",
   "license": "UNLICENSED",
-  "homepage": "https://buildingbia.com"
+  "homepage": "https://buildingbia.com",
+  "dependencies": {
+    "@vercel/speed-insights": "^1.2.0"
+  }
 }
