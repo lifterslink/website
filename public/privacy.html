@@ -1,0 +1,664 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>Privacy Policy - Bia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Privacy Policy for Bia. Learn how we collect, use, and protect your information.">
+    <meta name="author" content="Bia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buildingbia.com/privacy">
+    <meta property="og:title" content="Privacy Policy - Bia">
+    <meta property="og:description" content="Privacy Policy for Bia. Learn how we collect, use, and protect your information.">
+    <meta property="og:image" content="https://buildingbia.com/assets/logos/bia_logo_512.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buildingbia.com/privacy">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="/assets/logos/bia_logo_40.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/bia_logo_192.png">
+    <link rel="apple-touch-icon" href="/assets/logos/bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+
+    <style>
+        /* Privacy Policy Specific Styles */
+        .privacy-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 140px 20px 80px;
+        }
+
+        .privacy-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .privacy-header h1 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .privacy-meta {
+            color: var(--text-secondary);
+            font-size: 14px;
+            margin-top: 20px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .privacy-meta span {
+            padding: 8px 16px;
+            background: var(--surface-light);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-subtle);
+        }
+
+        .privacy-body {
+            background: var(--surface-light);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+        }
+
+        .privacy-body h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(24px, 3vw, 32px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin: 50px 0 20px 0;
+            padding-top: 20px;
+            border-top: 1px solid var(--border-subtle);
+        }
+
+        .privacy-body h2:first-child {
+            margin-top: 0;
+            padding-top: 0;
+            border-top: none;
+        }
+
+        .privacy-body h3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(18px, 2.5vw, 22px);
+            font-weight: 600;
+            color: var(--accent);
+            margin: 30px 0 15px 0;
+        }
+
+        .privacy-body p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .privacy-body ul, .privacy-body ol {
+            margin: 20px 0;
+            padding-left: 30px;
+        }
+
+        .privacy-body li {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+
+        .privacy-body strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .privacy-body a {
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .privacy-body a:hover {
+            color: var(--accent-hover);
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            background: var(--surface-light);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(233, 185, 73, 0.1);
+            border-color: var(--accent);
+            transform: translateX(-4px);
+        }
+
+        .contact-box {
+            background: rgba(233, 185, 73, 0.05);
+            border: 1px solid var(--border-light);
+            border-radius: 16px;
+            padding: 30px;
+            margin: 40px 0;
+        }
+
+        .contact-box h3 {
+            margin-top: 0;
+        }
+
+        hr {
+            border: none;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--border-light), transparent);
+            margin: 50px 0;
+        }
+
+        @media (max-width: 768px) {
+            .privacy-content {
+                padding: 100px 20px 60px;
+            }
+
+            .privacy-body {
+                padding: 40px 30px;
+            }
+
+            .privacy-body h2 {
+                font-size: 24px;
+                margin: 40px 0 16px 0;
+            }
+
+            .privacy-body h3 {
+                font-size: 18px;
+            }
+
+            .privacy-body p,
+            .privacy-body li {
+                font-size: 15px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .privacy-content {
+                padding: 80px 16px 40px;
+            }
+
+            .privacy-body {
+                padding: 30px 20px;
+            }
+
+            .privacy-header h1 {
+                font-size: 32px;
+            }
+
+            .privacy-meta {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="container">
+            <a href="/" class="logo-wrapper">
+                <img src="/assets/logos/bia_logo_40.png"
+                     srcset="/assets/logos/bia_logo_40.png 1x, /assets/logos/bia_logo_192.png 2x"
+                     alt="Bia logo"
+                     class="logo-image"
+                     width="40"
+                     height="40"
+                     decoding="async"
+                     fetchpriority="high">
+                <h1 class="logo">BIA</h1>
+            </a>
+            <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" class="follow-us">Follow Us</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="privacy-content">
+            <a href="/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Home
+            </a>
+
+            <div class="privacy-header">
+                <h1>Privacy Policy</h1>
+                <div class="privacy-meta">
+                    <span><strong>Effective Date:</strong> January 1, 2025</span>
+                    <span><strong>Last Updated:</strong> January 1, 2025</span>
+                </div>
+            </div>
+
+            <div class="privacy-body">
+                <h2>Introduction</h2>
+                <p>Welcome to Bia ("we," "our," or "us"). We are committed to protecting your privacy and being transparent about how we collect, use, and protect your information.</p>
+                <p>This Privacy Policy explains how we handle your data when you use the Bia mobile application (the "App") and related services (collectively, the "Services").</p>
+                <p>By using Bia, you agree to the collection and use of information in accordance with this policy.</p>
+
+                <h2>Information We Collect</h2>
+
+                <h3>1. Information You Provide Directly</h3>
+                <p><strong>Account Information:</strong></p>
+                <ul>
+                    <li>Name (from Apple Sign In)</li>
+                    <li>Email address (from Apple Sign In)</li>
+                    <li>Username (you create this during onboarding)</li>
+                    <li>Optional profile information (bio, profile photo, coach status)</li>
+                </ul>
+
+                <p><strong>Athlete Profile Claims:</strong></p>
+                <ul>
+                    <li>If you claim an OpenPowerlifting athlete profile, we store the association between your account and that athlete ID</li>
+                    <li>This links your Bia account to publicly available competition results</li>
+                </ul>
+
+                <p><strong>Coach-Athlete Relationships:</strong></p>
+                <ul>
+                    <li>Coach connections you create</li>
+                    <li>Notes about coaching relationships</li>
+                    <li>Start dates of coaching relationships</li>
+                </ul>
+
+                <p><strong>Social Connections:</strong></p>
+                <ul>
+                    <li>Users you follow</li>
+                    <li>Users who follow you</li>
+                </ul>
+
+                <h3>2. Information Collected Automatically</h3>
+                <p><strong>Device Information:</strong></p>
+                <ul>
+                    <li>Device type and model</li>
+                    <li>Operating system version</li>
+                    <li>App version</li>
+                    <li>Unique device identifiers</li>
+                </ul>
+
+                <p><strong>Usage Information:</strong></p>
+                <ul>
+                    <li>Features you use</li>
+                    <li>Search queries</li>
+                    <li>Pages viewed</li>
+                    <li>Time spent in the app</li>
+                </ul>
+
+                <p><strong>Performance Data:</strong></p>
+                <ul>
+                    <li>Crash reports</li>
+                    <li>Error logs</li>
+                    <li>App performance metrics</li>
+                </ul>
+
+                <h3>3. Information We Do NOT Collect</h3>
+                <p>We do NOT collect:</p>
+                <ul>
+                    <li>Precise geolocation (GPS coordinates)</li>
+                    <li>Health or medical information</li>
+                    <li>Financial information (the app is free)</li>
+                    <li>Biometric data</li>
+                    <li>Contacts from your device</li>
+                    <li>Photos from your device (unless you explicitly upload one)</li>
+                </ul>
+
+                <h2>How We Use Your Information</h2>
+
+                <h3>Provide Core Functionality</h3>
+                <ul>
+                    <li>Create and maintain your account</li>
+                    <li>Display your athlete profile</li>
+                    <li>Connect you with coaches and other athletes</li>
+                    <li>Show your competition results</li>
+                    <li>Enable social features (following, network feed)</li>
+                    <li>Search and discover other athletes</li>
+                </ul>
+
+                <h3>Improve Our Services</h3>
+                <ul>
+                    <li>Analyze usage patterns to improve app features</li>
+                    <li>Debug technical issues</li>
+                    <li>Optimize app performance</li>
+                    <li>Develop new features</li>
+                </ul>
+
+                <h3>Communicate With You</h3>
+                <ul>
+                    <li>Send important account notifications</li>
+                    <li>Respond to your support requests</li>
+                    <li>Notify you of app updates (if you opt in)</li>
+                </ul>
+
+                <h3>Ensure Security</h3>
+                <ul>
+                    <li>Prevent fraud and abuse</li>
+                    <li>Enforce our Terms of Service</li>
+                    <li>Protect user safety</li>
+                </ul>
+
+                <h2>Data Storage and Security</h2>
+
+                <p><strong>Where We Store Data:</strong></p>
+                <ul>
+                    <li>Your account data is stored on secure servers provided by Supabase (PostgreSQL database)</li>
+                    <li>API requests are processed through Modal (serverless platform)</li>
+                    <li>All data is stored in the United States</li>
+                </ul>
+
+                <p><strong>How We Protect Data:</strong></p>
+                <ul>
+                    <li>Industry-standard encryption in transit (HTTPS/TLS)</li>
+                    <li>Encryption at rest for sensitive data</li>
+                    <li>Regular security audits</li>
+                    <li>Access controls and authentication</li>
+                    <li>Secure backend infrastructure</li>
+                </ul>
+
+                <p><strong>Local Storage:</strong></p>
+                <ul>
+                    <li>Some data is cached on your device for performance</li>
+                    <li>Cached data includes athlete profiles and search results</li>
+                    <li>Cache can be cleared by uninstalling the app</li>
+                </ul>
+
+                <h2>Data Sharing and Disclosure</h2>
+
+                <h3>We Do NOT Sell Your Data</h3>
+                <p>We will never sell, rent, or trade your personal information to third parties for marketing purposes.</p>
+
+                <h3>Public Information</h3>
+                <p>The following information is publicly visible to other Bia users:</p>
+                <ul>
+                    <li>Your username</li>
+                    <li>Your bio (if you add one)</li>
+                    <li>Your claimed athlete profile (if you claim one)</li>
+                    <li>Your competition results (from OpenPowerlifting)</li>
+                    <li>Your coach status (if applicable)</li>
+                    <li>Your following/follower counts</li>
+                </ul>
+
+                <h3>Third-Party Services We Use</h3>
+
+                <p><strong>Apple Sign In:</strong></p>
+                <ul>
+                    <li>Used for secure authentication</li>
+                    <li>We receive your name and email (or private relay email)</li>
+                    <li>Subject to Apple's Privacy Policy</li>
+                </ul>
+
+                <p><strong>Supabase (Database Hosting):</strong></p>
+                <ul>
+                    <li>Stores your account and profile data</li>
+                    <li>Subject to Supabase's Privacy Policy</li>
+                    <li>Located in United States</li>
+                </ul>
+
+                <p><strong>Modal (API Platform):</strong></p>
+                <ul>
+                    <li>Processes API requests</li>
+                    <li>Does not store personal data</li>
+                    <li>Subject to Modal's Privacy Policy</li>
+                </ul>
+
+                <p><strong>OpenPowerlifting (Competition Data):</strong></p>
+                <ul>
+                    <li>Publicly available powerlifting database</li>
+                    <li>We display this data but do not own it</li>
+                    <li>Subject to OpenPowerlifting's policies</li>
+                </ul>
+
+                <h3>When We Must Disclose Information</h3>
+                <p>We may disclose your information if:</p>
+                <ul>
+                    <li>Required by law or legal process</li>
+                    <li>Necessary to protect our rights or property</li>
+                    <li>Necessary to protect user safety</li>
+                    <li>In connection with a merger, acquisition, or sale of assets (with notice)</li>
+                </ul>
+
+                <h2>Your Rights and Choices</h2>
+
+                <h3>Access Your Data</h3>
+                <p>You can view and edit your profile information in the app at any time.</p>
+
+                <h3>Delete Your Data</h3>
+                <p>You can request deletion of your account by:</p>
+                <ol>
+                    <li>Going to Settings &gt; Delete Account in the app, or</li>
+                    <li>Emailing us at privacy@buildingbia.com</li>
+                </ol>
+
+                <p><strong>What happens when you delete your account:</strong></p>
+                <ul>
+                    <li>Your account and profile information are permanently deleted</li>
+                    <li>Your social connections (following/followers) are removed</li>
+                    <li>Cached data on your device is cleared</li>
+                    <li>This action cannot be undone</li>
+                </ul>
+
+                <p><strong>What is NOT deleted:</strong></p>
+                <ul>
+                    <li>OpenPowerlifting competition data (publicly available)</li>
+                    <li>Aggregated, anonymized usage statistics</li>
+                </ul>
+
+                <h3>Export Your Data</h3>
+                <p>You can request a copy of your data by emailing privacy@buildingbia.com. We will provide:</p>
+                <ul>
+                    <li>Your profile information</li>
+                    <li>Your social connections</li>
+                    <li>Your coach relationships</li>
+                    <li>Format: JSON or CSV</li>
+                </ul>
+
+                <h3>Opt Out of Communications</h3>
+                <ul>
+                    <li>You can disable push notifications in your device settings</li>
+                    <li>You cannot opt out of critical account security notifications</li>
+                </ul>
+
+                <h3>California Privacy Rights (CCPA)</h3>
+                <p>If you are a California resident, you have the right to:</p>
+                <ul>
+                    <li>Know what personal information we collect</li>
+                    <li>Request deletion of your information</li>
+                    <li>Opt out of the sale of your information (we don't sell data)</li>
+                    <li>Non-discrimination for exercising your rights</li>
+                </ul>
+                <p>Contact privacy@buildingbia.com to exercise these rights.</p>
+
+                <h3>European Privacy Rights (GDPR)</h3>
+                <p>If you are in the European Economic Area, you have the right to:</p>
+                <ul>
+                    <li>Access your personal data</li>
+                    <li>Rectify inaccurate data</li>
+                    <li>Request erasure of your data</li>
+                    <li>Restrict processing of your data</li>
+                    <li>Data portability</li>
+                    <li>Object to processing</li>
+                    <li>Lodge a complaint with a supervisory authority</li>
+                </ul>
+                <p>Contact privacy@buildingbia.com to exercise these rights.</p>
+
+                <h2>Children's Privacy</h2>
+                <p>Bia is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us immediately at privacy@buildingbia.com and we will delete it.</p>
+
+                <h2>Data Retention</h2>
+
+                <p><strong>Active Accounts:</strong></p>
+                <ul>
+                    <li>We retain your data for as long as your account is active</li>
+                    <li>Cached data on your device expires automatically (typically 24 hours)</li>
+                </ul>
+
+                <p><strong>Deleted Accounts:</strong></p>
+                <ul>
+                    <li>Account data is permanently deleted within 30 days of deletion request</li>
+                    <li>Backup systems may retain data for up to 90 days for disaster recovery</li>
+                </ul>
+
+                <p><strong>Competition Data:</strong></p>
+                <ul>
+                    <li>OpenPowerlifting data is retained indefinitely (it's publicly available historical records)</li>
+                </ul>
+
+                <h2>International Data Transfers</h2>
+                <p>If you access Bia from outside the United States, your information will be transferred to and processed in the United States. By using our Services, you consent to this transfer.</p>
+                <p>We implement appropriate safeguards for international data transfers in compliance with applicable laws.</p>
+
+                <h2>Cookies and Tracking Technologies</h2>
+
+                <p><strong>Mobile App:</strong></p>
+                <p>The app does not use cookies. We collect usage data through:</p>
+                <ul>
+                    <li>Standard app analytics</li>
+                    <li>Crash reporting</li>
+                    <li>Performance monitoring</li>
+                </ul>
+
+                <p><strong>Website:</strong></p>
+                <p>Our website (buildingbia.com) uses:</p>
+                <ul>
+                    <li>Essential cookies for site functionality</li>
+                    <li>Analytics cookies (Google Analytics) - you can opt out via browser settings</li>
+                </ul>
+                <p>We do not use advertising cookies or third-party tracking.</p>
+
+                <h2>Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time. Changes will be posted on this page with an updated "Last Updated" date.</p>
+
+                <p><strong>For material changes, we will:</strong></p>
+                <ul>
+                    <li>Notify you via email (if you provided one)</li>
+                    <li>Display a prominent notice in the app</li>
+                    <li>Require your consent for continued use (if legally required)</li>
+                </ul>
+
+                <p>Your continued use of Bia after changes constitutes acceptance of the updated policy.</p>
+
+                <div class="contact-box">
+                    <h2>Contact Us</h2>
+                    <p>If you have questions about this Privacy Policy or our data practices, please contact us:</p>
+                    <p>
+                        <strong>Email:</strong> <a href="mailto:privacy@buildingbia.com">privacy@buildingbia.com</a><br>
+                        <strong>Support:</strong> <a href="mailto:support@buildingbia.com">support@buildingbia.com</a><br>
+                        <strong>Website:</strong> <a href="https://buildingbia.com/privacy">https://buildingbia.com/privacy</a>
+                    </p>
+                </div>
+
+                <h2>Your Consent</h2>
+                <p>By using Bia, you consent to:</p>
+                <ul>
+                    <li>This Privacy Policy</li>
+                    <li>The collection and use of information as described</li>
+                    <li>The transfer of data to the United States (if you're international)</li>
+                </ul>
+
+                <h2>Additional Information</h2>
+
+                <h3>Open Source</h3>
+                <p>Certain components of Bia may use open-source software. Licenses are available upon request.</p>
+
+                <h3>Security Incidents</h3>
+                <p>If we experience a data breach affecting your personal information, we will:</p>
+                <ul>
+                    <li>Notify you within 72 hours (as required by law)</li>
+                    <li>Explain what data was affected</li>
+                    <li>Detail steps we're taking to address the breach</li>
+                    <li>Provide guidance on protecting yourself</li>
+                </ul>
+
+                <hr>
+
+                <p style="text-align: center; color: var(--text-muted); font-size: 14px;">
+                    <strong>This Privacy Policy was last updated on January 1, 2025.</strong><br><br>
+                    For previous versions of this policy, please contact <a href="mailto:privacy@buildingbia.com">privacy@buildingbia.com</a>.
+                </p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <h1 class="logo">BIA</h1>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/">Home</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/buildingbia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
