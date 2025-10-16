@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>Support - Bia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Get help with Bia. Find answers to common questions, troubleshooting tips, and contact support.">
+    <meta name="author" content="Bia">
+    <meta name="robots" content="index, follow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buildingbia.com/support">
+    <meta property="og:title" content="Support - Bia">
+    <meta property="og:description" content="Get help with Bia. Find answers to common questions, troubleshooting tips, and contact support.">
+    <meta property="og:image" content="https://buildingbia.com/assets/logos/bia_logo_512.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buildingbia.com/support">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="/assets/logos/bia_logo_40.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/bia_logo_192.png">
+    <link rel="apple-touch-icon" href="/assets/logos/bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+
+    <style>
+        /* Support Page Specific Styles */
+        .support-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 140px 20px 80px;
+        }
+
+        .support-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .support-header h1 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .support-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-top: 16px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            background: var(--surface-light);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(233, 185, 73, 0.1);
+            border-color: var(--accent);
+            transform: translateX(-4px);
+        }
+
+        .support-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .support-card {
+            background: var(--surface-light);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 40px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) backwards;
+        }
+
+        .support-card:nth-child(1) { animation-delay: 0.1s; }
+        .support-card:nth-child(2) { animation-delay: 0.2s; }
+        .support-card:nth-child(3) { animation-delay: 0.3s; }
+
+        .support-card:hover {
+            transform: translateY(-5px);
+            box-shadow:
+                0 30px 80px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            border-color: var(--glow-accent);
+        }
+
+        .support-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            font-size: 28px;
+        }
+
+        .support-card h3 {
+            font-family: 'Rubik', sans-serif;
+            font-size: 22px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 12px;
+        }
+
+        .support-card p {
+            font-family: 'Inter', sans-serif;
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+        }
+
+        .support-card a {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .support-card a:hover {
+            color: var(--accent-hover);
+            transform: translateX(4px);
+        }
+
+        .faq-section {
+            background: var(--surface-light);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.4s backwards;
+        }
+
+        .faq-section h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .faq-item {
+            margin-bottom: 32px;
+            padding-bottom: 32px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .faq-item:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+
+        .faq-question {
+            font-family: 'Rubik', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--accent);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .faq-question::before {
+            content: 'Q:';
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .faq-answer {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            padding-left: 32px;
+        }
+
+        .faq-answer strong {
+            color: var(--text-primary);
+        }
+
+        .faq-answer ul {
+            margin: 12px 0;
+            padding-left: 20px;
+        }
+
+        .faq-answer li {
+            margin-bottom: 8px;
+        }
+
+        .contact-section {
+            background: var(--surface-light);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid var(--border-light);
+            border-radius: 24px;
+            padding: 60px;
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.05);
+            text-align: center;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.5s backwards;
+        }
+
+        .contact-section h2 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            font-family: 'Inter', sans-serif;
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-secondary);
+            margin-bottom: 30px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent) 0%, var(--accent-secondary) 100%);
+            color: var(--bg-primary);
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 15px;
+            letter-spacing: 0.5px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow:
+                0 4px 15px var(--glow-accent),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            text-transform: uppercase;
+        }
+
+        .contact-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 8px 25px var(--glow-accent),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .support-content {
+                padding: 100px 20px 60px;
+            }
+
+            .support-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .faq-section,
+            .contact-section {
+                padding: 40px 30px;
+            }
+
+            .faq-question {
+                font-size: 16px;
+            }
+
+            .faq-answer {
+                font-size: 15px;
+                padding-left: 28px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .support-content {
+                padding: 80px 16px 40px;
+            }
+
+            .support-card {
+                padding: 30px 24px;
+            }
+
+            .faq-section,
+            .contact-section {
+                padding: 30px 20px;
+            }
+
+            .support-header h1 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <!-- Navigation -->
+    <header class="nav">
+        <div class="container">
+            <a href="/" class="logo-wrapper">
+                <img src="/assets/logos/bia_logo_40.png"
+                     srcset="/assets/logos/bia_logo_40.png 1x, /assets/logos/bia_logo_192.png 2x"
+                     alt="Bia logo"
+                     class="logo-image"
+                     width="40"
+                     height="40"
+                     decoding="async"
+                     fetchpriority="high">
+                <h1 class="logo">BIA</h1>
+            </a>
+            <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" class="follow-us">Follow Us</a>
+        </div>
+    </header>
+
+    <main id="main-content">
+        <div class="support-content">
+            <a href="/" class="back-link">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+                Back to Home
+            </a>
+
+            <div class="support-header">
+                <h1>Support Center</h1>
+                <p>We're here to help. Find answers to common questions or reach out to our team.</p>
+            </div>
+
+            <div class="support-grid">
+                <div class="support-card">
+                    <div class="support-card-icon">📧</div>
+                    <h3>Email Support</h3>
+                    <p>Get help from our support team. We typically respond within 24 hours.</p>
+                    <a href="mailto:support@buildingbia.com">
+                        support@buildingbia.com
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">💬</div>
+                    <h3>Social Media</h3>
+                    <p>Follow us on Instagram for updates, tips, and community support.</p>
+                    <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer">
+                        @buildingbia
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+
+                <div class="support-card">
+                    <div class="support-card-icon">🔒</div>
+                    <h3>Privacy & Security</h3>
+                    <p>Learn about how we protect your data and respect your privacy.</p>
+                    <a href="/privacy">
+                        View Privacy Policy
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <polyline points="9 18 15 12 9 6"></polyline>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+
+                <div class="faq-item">
+                    <div class="faq-question">What is Bia?</div>
+                    <div class="faq-answer">
+                        Bia is the global community for powerlifters. It's a platform where athletes can track their competition history, connect with coaches, discover other lifters, and stay engaged with the powerlifting community. We integrate data from OpenPowerlifting to provide comprehensive competition records and athlete profiles.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I create an account?</div>
+                    <div class="faq-answer">
+                        Creating an account is easy! Download the Bia app from the App Store, then sign in with Apple Sign In. You'll create a username and can optionally add profile information like a bio and profile photo. If you've competed in powerlifting meets, you can claim your athlete profile to link your competition history.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I claim my athlete profile?</div>
+                    <div class="faq-answer">
+                        After creating your account, you can search for your name in the athlete database. When you find your profile from OpenPowerlifting, tap "Claim Profile" and follow the verification steps. Once verified, your competition history will be linked to your Bia account and visible on your profile.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is Bia free to use?</div>
+                    <div class="faq-answer">
+                        Yes! Bia is completely free to use. There are no subscriptions, in-app purchases, or hidden fees. We believe in making powerlifting more accessible and connected for everyone.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Where does the competition data come from?</div>
+                    <div class="faq-answer">
+                        All competition data in Bia comes from <strong>OpenPowerlifting</strong>, a nonprofit organization dedicated to creating a permanent, open archive of powerlifting history. They maintain the most comprehensive database of powerlifting meets and results worldwide.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What features are available?</div>
+                    <div class="faq-answer">
+                        <strong>Current features include:</strong>
+                        <ul>
+                            <li>View your complete competition history</li>
+                            <li>Search and discover other powerlifters</li>
+                            <li>Follow athletes and build your network</li>
+                            <li>Connect with coaches and manage coaching relationships</li>
+                            <li>Browse meet results and federation records</li>
+                            <li>Track your personal records and progress</li>
+                        </ul>
+                        We're constantly building new features, so stay tuned!
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I connect with a coach?</div>
+                    <div class="faq-answer">
+                        You can search for coaches in the app and send them a connection request. Once they accept, they'll be listed as your coach and can view your competition history. Coaches can also manage multiple athletes and track their progress.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I use Bia if I haven't competed yet?</div>
+                    <div class="faq-answer">
+                        Absolutely! Bia is for all powerlifters, whether you're a seasoned competitor or just getting started. You can create an account, follow athletes, connect with coaches, and be part of the community. When you compete in your first meet, you'll be able to claim your profile and see your results.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">My competition results are missing or incorrect. What do I do?</div>
+                    <div class="faq-answer">
+                        Since our data comes from OpenPowerlifting, any corrections or additions need to be submitted there. Visit <a href="https://www.openpowerlifting.org" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">openpowerlifting.org</a> and use their contact form to report issues. Once they update their database, the changes will automatically appear in Bia.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How do I delete my account?</div>
+                    <div class="faq-answer">
+                        You can delete your account at any time by going to <strong>Settings → Delete Account</strong> in the app. This will permanently remove your profile, connections, and all associated data. This action cannot be undone. Alternatively, you can email us at support@buildingbia.com to request account deletion.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Is my data secure?</div>
+                    <div class="faq-answer">
+                        Yes. We take data security seriously. All data is encrypted in transit and at rest. We use industry-standard security practices and only collect the minimum information necessary to provide our services. For full details, please read our <a href="/privacy" style="color: var(--accent);">Privacy Policy</a>.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">What platforms is Bia available on?</div>
+                    <div class="faq-answer">
+                        Bia is currently available on iOS via the App Store. Android support is coming soon! Join our waitlist on the homepage to be notified when we launch on Android.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">I found a bug. How do I report it?</div>
+                    <div class="faq-answer">
+                        We appreciate bug reports! Please email us at <strong>support@buildingbia.com</strong> with:
+                        <ul>
+                            <li>A description of the bug</li>
+                            <li>Steps to reproduce it</li>
+                            <li>Screenshots (if applicable)</li>
+                            <li>Your device model and iOS version</li>
+                        </ul>
+                        We'll investigate and fix it as soon as possible.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">Can I suggest a new feature?</div>
+                    <div class="faq-answer">
+                        Absolutely! We'd love to hear your ideas. Email us at <strong>support@buildingbia.com</strong> with your feature request. We read every suggestion and consider them when planning our roadmap.
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question">How can I stay updated on new features?</div>
+                    <div class="faq-answer">
+                        Follow us on <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">Instagram @buildingbia</a> for regular updates, feature announcements, and behind-the-scenes looks at what we're building. You can also join our waitlist on the homepage to receive email updates.
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-section">
+                <h2>Still Need Help?</h2>
+                <p>Can't find the answer you're looking for? Our support team is here to help.</p>
+                <a href="mailto:support@buildingbia.com" class="contact-button">Contact Support</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <h1 class="logo">BIA</h1>
+                <nav class="footer-nav" aria-label="Footer navigation">
+                    <a href="/">Home</a>
+                    <a href="/support">Support</a>
+                    <a href="/privacy">Privacy Policy</a>
+                    <a href="https://www.instagram.com/buildingbia/" target="_blank" rel="noopener noreferrer">Instagram</a>
+                    <a href="https://www.linkedin.com/company/buildingbia/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vercel Speed Insights -->
+    <script>
+      window.si = window.si || function () { (window.siq = window.siq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/speed-insights/script.js"></script>
+
+    <!-- Vercel Analytics -->
+    <script>
+      window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+    </script>
+    <script defer src="/_vercel/insights/script.js"></script>
+</body>
+</html>
