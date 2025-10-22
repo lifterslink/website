@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
+    <title>Delete Account - Bia</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Request account deletion for Bia. Submit a request to permanently delete your account and associated data.">
+    <meta name="author" content="Bia">
+    <meta name="robots" content="noindex, nofollow">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://buildingbia.com/delete-account">
+    <meta property="og:title" content="Delete Account - Bia">
+    <meta property="og:description" content="Request account deletion for Bia.">
+    <meta property="og:image" content="https://buildingbia.com/assets/logos/bia_logo_512.png">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://buildingbia.com/delete-account">
+
+    <!-- Theme Color for Mobile Browsers -->
+    <meta name="theme-color" content="#0a0a0a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="40x40" href="/assets/logos/bia_logo_40.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="/assets/logos/bia_logo_192.png">
+    <link rel="apple-touch-icon" href="/assets/logos/bia_logo_192.png">
+    <link rel="manifest" href="/manifest.json">
+
+    <!-- Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Fonts -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700&display=swap"></noscript>
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="/assets/styles/styles.css">
+
+    <style>
+        /* Delete Account Page Specific Styles */
+        .delete-account-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 140px 20px 80px;
+        }
+
+        .delete-account-header {
+            text-align: center;
+            margin-bottom: 60px;
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .delete-account-header h1 {
+            font-family: 'Rubik', sans-serif;
+            font-size: clamp(36px, 5vw, 56px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            color: var(--text-primary);
+        }
+
+        .delete-account-header p {
+            color: var(--text-secondary);
+            font-size: 18px;
+            margin-top: 16px;
+            line-height: 1.6;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 14px;
+            margin-bottom: 40px;
+            padding: 10px 20px;
+            background: var(--surface-light);
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-subtle);
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            background: rgba(233, 185, 73, 0.1);
+            border-color: var(--accent);
+            transform: translateX(-4px);
+        }
+
+        .delete-card {
+            background: var(--surface-light);
+            border: 1px solid var(--border-subtle);
+            border-radius: 24px;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(20px);
+            box-shadow:
+                0 20px 60px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            animation: fadeInUp 0.8s cubic-bezier(0.4, 0, 0.2, 1) 0.2s backwards;
+        }
+
+        .warning-box {
+            background: rgba(255, 59, 48, 0.1);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .warning-box h3 {
+            color: #ff3b30;
+            font-family: 'Rubik', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .warning-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        .warning-box li {
+            padding-left: 24px;
+            position: relative;
+            margin-bottom: 8px;
+        }
+
+        .warning-box li:before {
+            content: "•";
+            position: absolute;
+            left: 8px;
+            color: #ff3b30;
+            font-weight: bold;
+        }
+
+        .info-box {
+            background: rgba(233, 185, 73, 0.1);
+            border: 1px solid rgba(233, 185, 73, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .info-box h3 {
+            color: var(--accent);
+            font-family: 'Rubik', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .info-box p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.8;
+            margin: 0;
+        }
+
+        .form-group {
+            margin-bottom: 24px;
+        }
+
+        .form-group label {
+            display: block;
+            color: var(--text-primary);
+            font-weight: 600;
+            font-size: 15px;
+            margin-bottom: 10px;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-subtle);
+            border-radius: 12px;
+            color: var(--text-primary);
+            font-size: 15px;
+            font-family: 'Inter', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+            background: rgba(233, 185, 73, 0.05);
+        }
+
+        .form-group textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        .form-hint {
+            color: var(--text-tertiary);
+            font-size: 13px;
+            margin-top: 8px;
+        }
+
+        .submit-button {
+            width: 100%;
+            padding: 18px 32px;
+            background: linear-gradient(135deg, #ff3b30 0%, #d32f2f 100%);
+            border: 1px solid rgba(255, 59, 48, 0.3);
+            border-radius: 14px;
+            color: white;
+            font-size: 16px;
+            font-weight: 600;
+            font-family: 'Inter', sans-serif;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow:
+                0 8px 20px rgba(255, 59, 48, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-button:hover {
+            transform: translateY(-2px);
+            box-shadow:
+                0 12px 30px rgba(255, 59, 48, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+
+        .submit-button:active {
+            transform: translateY(0);
+        }
+
+        .submit-button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .success-message {
+            display: none;
+            background: rgba(52, 199, 89, 0.1);
+            border: 1px solid rgba(52, 199, 89, 0.3);
+            border-radius: 16px;
+            padding: 24px;
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .success-message.show {
+            display: block;
+            animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .success-message h3 {
+            color: #34c759;
+            font-family: 'Rubik', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .success-message p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .delete-account-content {
+                padding: 100px 20px 60px;
+            }
+
+            .delete-card {
+                padding: 40px 30px;
+            }
+
+            .warning-box,
+            .info-box {
+                padding: 20px;
+            }
+        }
+
+        @media (max-width: 430px) {
+            .delete-account-content {
+                padding: 80px 16px 40px;
+            }
+
+            .delete-card {
+                padding: 30px 20px;
+            }
+
+            .delete-account-header h1 {
+                font-size: 32px;
+            }
+
+            .warning-box,
+            .info-box {
+                padding: 16px;
+            }
+
+            .form-group input,
+            .form-group textarea {
+                padding: 14px 16px;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">
+                <img src="/assets/logos/bia_logo_192.png" alt="Bia Logo" width="40" height="40">
+                <span>Bia</span>
+            </a>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="/support.html">Support</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="delete-account-content">
+        <a href="/" class="back-link">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 12L6 8L10 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            Back to Home
+        </a>
+
+        <div class="delete-account-header">
+            <h1>Delete Account</h1>
+            <p>We're sorry to see you go. Submit a request to permanently delete your account.</p>
+        </div>
+
+        <div class="delete-card">
+            <div class="warning-box">
+                <h3>⚠️ This action is permanent</h3>
+                <ul>
+                    <li>Your username and profile will be deleted</li>
+                    <li>All social connections (followers, following) will be removed</li>
+                    <li>Your coach relationships will be deleted</li>
+                    <li>Claimed athlete profiles will be unclaimed</li>
+                    <li>Your account cannot be recovered after deletion</li>
+                </ul>
+            </div>
+
+            <div class="info-box">
+                <h3>ℹ️ What stays public</h3>
+                <p>Your competition history from OpenPowerlifting will remain publicly available, as this is historical competition data that exists independently of your Bia account.</p>
+            </div>
+
+            <form id="deleteAccountForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div class="form-group">
+                    <label for="email">Email or Apple ID *</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        placeholder="The email associated with your Bia account"
+                    >
+                    <div class="form-hint">Enter the email or Apple ID you use to sign in to Bia</div>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username (if you remember it)</label>
+                    <input
+                        type="text"
+                        id="username"
+                        name="username"
+                        placeholder="Your Bia username"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="reason">Reason for deletion (optional)</label>
+                    <textarea
+                        id="reason"
+                        name="reason"
+                        placeholder="Help us improve by letting us know why you're leaving"
+                    ></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="confirm" required style="width: auto; margin-right: 8px;">
+                        I understand this action is permanent and cannot be undone
+                    </label>
+                </div>
+
+                <input type="hidden" name="_subject" value="Bia Account Deletion Request">
+                <input type="hidden" name="_next" value="https://buildingbia.com/delete-account.html?success=true">
+
+                <button type="submit" class="submit-button">Submit Deletion Request</button>
+            </form>
+
+            <div class="success-message" id="successMessage">
+                <h3>✓ Request Submitted</h3>
+                <p>We've received your account deletion request. Your account will be permanently deleted within 7 business days. You'll receive a confirmation email once the deletion is complete.</p>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <div class="footer-logo">
+                    <img src="/assets/logos/bia_logo_192.png" alt="Bia Logo" width="40" height="40">
+                    <span>Bia</span>
+                </div>
+                <p class="footer-tagline">The global community for powerlifters</p>
+            </div>
+            <div class="footer-section">
+                <h4>Resources</h4>
+                <a href="/support.html">Support</a>
+                <a href="/privacy.html">Privacy Policy</a>
+                <a href="/delete-account.html">Delete Account</a>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <a href="mailto:support@buildingbia.com">support@buildingbia.com</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Bia. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Check if redirected with success parameter
+        if (window.location.search.includes('success=true')) {
+            document.getElementById('deleteAccountForm').style.display = 'none';
+            document.getElementById('successMessage').classList.add('show');
+
+            // Remove success parameter from URL without page reload
+            const url = new URL(window.location);
+            url.searchParams.delete('success');
+            window.history.replaceState({}, '', url);
+        }
+
+        // Form submission handling
+        document.getElementById('deleteAccountForm').addEventListener('submit', function(e) {
+            const submitButton = this.querySelector('.submit-button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting...';
+        });
+    </script>
+</body>
+</html>
