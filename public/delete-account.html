@@ -178,51 +178,36 @@
             margin: 0;
         }
 
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            color: var(--text-primary);
-            font-weight: 600;
-            font-size: 15px;
-            margin-bottom: 10px;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 16px 20px;
-            background: rgba(255, 255, 255, 0.05);
+        .instructions {
+            background: rgba(255, 255, 255, 0.03);
             border: 1px solid var(--border-subtle);
-            border-radius: 12px;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 30px;
+        }
+
+        .instructions h3 {
             color: var(--text-primary);
+            font-family: 'Rubik', sans-serif;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .instructions ol {
+            margin: 0;
+            padding-left: 20px;
+            color: var(--text-secondary);
             font-size: 15px;
-            font-family: 'Inter', sans-serif;
-            transition: all 0.3s ease;
-            box-sizing: border-box;
+            line-height: 1.8;
         }
 
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--accent);
-            background: rgba(233, 185, 73, 0.05);
+        .instructions li {
+            margin-bottom: 8px;
         }
 
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .form-hint {
-            color: var(--text-tertiary);
-            font-size: 13px;
-            margin-top: 8px;
-        }
-
-        .submit-button {
+        .delete-button {
+            display: block;
             width: 100%;
             padding: 18px 32px;
             background: linear-gradient(135deg, #ff3b30 0%, #d32f2f 100%);
@@ -232,6 +217,8 @@
             font-size: 16px;
             font-weight: 600;
             font-family: 'Inter', sans-serif;
+            text-decoration: none;
+            text-align: center;
             cursor: pointer;
             transition: all 0.3s ease;
             box-shadow:
@@ -239,49 +226,15 @@
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .submit-button:hover {
+        .delete-button:hover {
             transform: translateY(-2px);
             box-shadow:
                 0 12px 30px rgba(255, 59, 48, 0.3),
                 inset 0 1px 0 rgba(255, 255, 255, 0.2);
         }
 
-        .submit-button:active {
+        .delete-button:active {
             transform: translateY(0);
-        }
-
-        .submit-button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .success-message {
-            display: none;
-            background: rgba(52, 199, 89, 0.1);
-            border: 1px solid rgba(52, 199, 89, 0.3);
-            border-radius: 16px;
-            padding: 24px;
-            margin-top: 30px;
-            text-align: center;
-        }
-
-        .success-message.show {
-            display: block;
-            animation: fadeInUp 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .success-message h3 {
-            color: #34c759;
-            font-family: 'Rubik', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-
-        .success-message p {
-            color: var(--text-secondary);
-            font-size: 15px;
-            line-height: 1.6;
         }
 
         @media (max-width: 768px) {
@@ -294,7 +247,8 @@
             }
 
             .warning-box,
-            .info-box {
+            .info-box,
+            .instructions {
                 padding: 20px;
             }
         }
@@ -313,13 +267,9 @@
             }
 
             .warning-box,
-            .info-box {
+            .info-box,
+            .instructions {
                 padding: 16px;
-            }
-
-            .form-group input,
-            .form-group textarea {
-                padding: 14px 16px;
             }
         }
 
@@ -362,7 +312,7 @@
 
         <div class="delete-account-header">
             <h1>Delete Account</h1>
-            <p>We're sorry to see you go. Submit a request to permanently delete your account.</p>
+            <p>We're sorry to see you go. Click below to send a deletion request.</p>
         </div>
 
         <div class="delete-card">
@@ -382,55 +332,21 @@
                 <p>Your competition history from OpenPowerlifting will remain publicly available, as this is historical competition data that exists independently of your Bia account.</p>
             </div>
 
-            <form id="deleteAccountForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                <div class="form-group">
-                    <label for="email">Email or Apple ID *</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        required
-                        placeholder="The email associated with your Bia account"
-                    >
-                    <div class="form-hint">Enter the email or Apple ID you use to sign in to Bia</div>
-                </div>
-
-                <div class="form-group">
-                    <label for="username">Username (if you remember it)</label>
-                    <input
-                        type="text"
-                        id="username"
-                        name="username"
-                        placeholder="Your Bia username"
-                    >
-                </div>
-
-                <div class="form-group">
-                    <label for="reason">Reason for deletion (optional)</label>
-                    <textarea
-                        id="reason"
-                        name="reason"
-                        placeholder="Help us improve by letting us know why you're leaving"
-                    ></textarea>
-                </div>
-
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="confirm" required style="width: auto; margin-right: 8px;">
-                        I understand this action is permanent and cannot be undone
-                    </label>
-                </div>
-
-                <input type="hidden" name="_subject" value="Bia Account Deletion Request">
-                <input type="hidden" name="_next" value="https://buildingbia.com/delete-account.html?success=true">
-
-                <button type="submit" class="submit-button">Submit Deletion Request</button>
-            </form>
-
-            <div class="success-message" id="successMessage">
-                <h3>✓ Request Submitted</h3>
-                <p>We've received your account deletion request. Your account will be permanently deleted within 7 business days. You'll receive a confirmation email once the deletion is complete.</p>
+            <div class="instructions">
+                <h3>How it works:</h3>
+                <ol>
+                    <li>Click the button below to open your email app</li>
+                    <li>The email will be pre-filled with your deletion request</li>
+                    <li>Add your email/Apple ID and username (if you remember it)</li>
+                    <li>Send the email</li>
+                    <li>We'll process your request within 7 business days</li>
+                    <li>You'll receive a confirmation email when complete</li>
+                </ol>
             </div>
+
+            <a href="mailto:support@buildingbia.com?subject=Account%20Deletion%20Request&body=I%20would%20like%20to%20permanently%20delete%20my%20Bia%20account.%0A%0AEmail%20or%20Apple%20ID%3A%20%5BYour%20email%20here%5D%0AUsername%20(if%20you%20remember%20it)%3A%20%5BYour%20username%20here%5D%0AReason%20for%20deletion%20(optional)%3A%20%5BOptional%5D%0A%0AI%20understand%20this%20action%20is%20permanent%20and%20cannot%20be%20undone." class="delete-button">
+                Delete My Account
+            </a>
         </div>
     </main>
 
@@ -459,25 +375,5 @@
             <p>&copy; 2025 Bia. All rights reserved.</p>
         </div>
     </footer>
-
-    <script>
-        // Check if redirected with success parameter
-        if (window.location.search.includes('success=true')) {
-            document.getElementById('deleteAccountForm').style.display = 'none';
-            document.getElementById('successMessage').classList.add('show');
-
-            // Remove success parameter from URL without page reload
-            const url = new URL(window.location);
-            url.searchParams.delete('success');
-            window.history.replaceState({}, '', url);
-        }
-
-        // Form submission handling
-        document.getElementById('deleteAccountForm').addEventListener('submit', function(e) {
-            const submitButton = this.querySelector('.submit-button');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting...';
-        });
-    </script>
 </body>
 </html>
