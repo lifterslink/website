@@ -48,6 +48,26 @@ Bia (buildingbia.com) is a comprehensive platform for the global powerlifting co
 - `api/waitlist.js` - Vercel serverless function for email collection
 - `public/assets/logos/` - All logo variations (40px, 192px, 512px)
 - `public/assets/images/` - Content images including athlete photos
+- `vercel.json` - Deployment configuration including URL rewrites
+
+## Vercel URL Rewrites (IMPORTANT!)
+
+**When adding new HTML pages, ALWAYS add a URL rewrite in `vercel.json`**
+
+The site uses clean URLs without `.html` extensions. For each new page:
+
+1. Create the HTML file in `public/` (e.g., `public/new-page.html`)
+2. Add a rewrite rule in `vercel.json`:
+   ```json
+   { "source": "/new-page", "destination": "/new-page.html" }
+   ```
+
+**Current rewrites:**
+- `/support` → `/support.html`
+- `/privacy` → `/privacy.html`
+- `/delete-account` → `/delete-account.html`
+
+**Without the rewrite:** The page will 404 when accessed via `/page-name` (only `/page-name.html` will work)
 
 ## Key Features
 
